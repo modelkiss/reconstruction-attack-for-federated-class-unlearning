@@ -23,7 +23,7 @@ from src.utils.logging import setup_logging
 from src.utils.seeds import set_seed
 from src.data.dataset_factory import make_transforms_from_config
 
-from .strategies import fedavg_aggregate, FedOptAggregator, fedprox_aggregate
+from .strategies import fedavg_aggregate, FedOptAggregator, fedprox_aggregate, dp_fedavg_aggregate
 
 
 class Server:
@@ -33,6 +33,7 @@ class Server:
         processed_root: str = "data/processed",
         output_dir: str = "./outputs/experiments",
         device: str = "cpu",
+        initial_state_dict: Optional[Dict[str, torch.Tensor]] = None,
     ):
         """
         cfg is expected to contain keys:
@@ -60,6 +61,7 @@ class Server:
         self.processed_root = processed_root
         self.dataset_name = cfg.get("dataset", {}).get("name", cfg.get("dataset", "CIFAR10"))
         self.model_name = cfg.get("model", {}).get("backbone", cfg.get("model", "resnet20"))
+        self.exclude_classes = sorted(cfg.get("dataset", {}).get("exclude_classes", []))
         fed_cfg = cfg.get("federated", {})
         self.strategy = fed_cfg.get("strategy", "FedAvg")
         self.num_clients = fed_cfg.get("num_clients", 20)
@@ -75,6 +77,12 @@ class Server:
 
         # build initial global model
         self.global_model = get_model(self.model_name, self.dataset_name, device="cpu")
+        if initial_state_dict is not None:
+            missing, unexpected = self.global_model.load_state_dict(initial_state_dict, strict=False)
+            if missing:
+                self.logger.warning(f"Initial state is missing params: {missing}")
+            if unexpected:
+                self.logger.warning(f"Initial state has unexpected params: {unexpected}")
         self.global_state = {k: v.detach().cpu().clone() for k, v in self.global_model.state_dict().items()}
         self.logger.info(f"Initialized global model {self.model_name} with {count_parameters(self.global_model)} params")
 
@@ -84,6 +92,19 @@ class Server:
             # default server LR from config or 1.0
             server_lr = fed_cfg.get("server_lr", 1.0)
             self.server_aggregator = FedOptAggregator(self.global_state, lr=server_lr)
+
+        # privacy-related options
+        dp_cfg = fed_cfg.get("dp", {}) or {}
+        self.dp_enabled = bool(dp_cfg.get("enabled", False))
+        self.dp_clip_norm = float(dp_cfg.get("clip_norm", 1.0))
+        self.dp_noise_multiplier = float(dp_cfg.get("noise_multiplier", 0.0))
+        self.dp_seed = int(dp_cfg.get("seed", 0))
+        if self.dp_enabled and self.strategy.lower() not in ("fedavg", "fedprox"):
+            self.logger.warning("DP aggregation currently supports FedAvg/FedProx only; falling back to FedAvg aggregation")
+
+        self.secure_aggregation = bool(fed_cfg.get("secure_aggregation", False))
+        if self.secure_aggregation:
+            self.logger.info("Secure aggregation enabled: per-client updates are aggregated without persistent storage")
 
         # prepare client ids
         self.all_client_ids = list(range(self.num_clients))
@@ -138,6 +159,7 @@ class Server:
                     mu=self.mu,
                     num_workers=self.num_workers,
                     transform=self.train_transform,
+                    exclude_classes=self.exclude_classes,
                 )
 
                 res = client.local_train(self.global_state)
@@ -145,7 +167,19 @@ class Server:
                 self.logger.info(f"  client {cid} - samples {res['num_samples']} - loss {res['train_loss']:.4f}")
 
             # aggregate
-            if self.strategy.lower() == "fedavg":
+            if self.dp_enabled:
+                from torch import Generator
+
+                gen = Generator(device="cpu")
+                gen.manual_seed(self.dp_seed + r)
+                new_state = dp_fedavg_aggregate(
+                    self.global_state,
+                    client_results,
+                    clip_norm=self.dp_clip_norm,
+                    noise_multiplier=self.dp_noise_multiplier,
+                    generator=gen,
+                )
+            elif self.strategy.lower() == "fedavg":
                 new_state = fedavg_aggregate(self.global_state, client_results)
             elif self.strategy.lower() == "fedopt":
                 if self.server_aggregator is None:
@@ -159,6 +193,9 @@ class Server:
 
             # update global state and save checkpoint per round
             self.global_state = {k: v.detach().cpu().clone() for k, v in new_state.items()}
+
+            if self.secure_aggregation:
+                client_results.clear()
 
             # optional: save checkpoint
             ckpt_path = os.path.join(self.out_dir, f"checkpoints_round_{r+1}.pth")
