@@ -81,6 +81,12 @@ python src/reconstruction_attack.py --config configs/attack_cifar10.yaml
 # 生成热力图与置信度分析
 python src/visualization/heatmap_analysis.py --input outputs/models/
 
+# 一键跑完整流程（联邦训练→遗忘→标签推理→数据重建）
+python -m src.experiments.run_full_pipeline --config configs/experiments/full_pipeline_all.yaml
+
+`full_pipeline_all.yaml` 内预置了 CIFAR-10/CIFAR-100、MNIST、Fashion-MNIST 的基线与防御场景（安全聚合、差分隐私）。
+脚本会在 `outputs/pipeline/<时间戳>` 下生成每个场景的模型权重、标签推理结果、重建图像以及汇总 JSON；可使用 `--scenario` 仅运行某个场景。
+
 💾 4. 输出目录结构
 
 默认输出在 /workspace/outputs（已挂载到本地），包括：

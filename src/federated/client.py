@@ -5,7 +5,7 @@ Client-side logic for federated learning simulation.
 Each Client performs local training on its local dataloader and returns model updates.
 """
 
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 import copy
 import torch
 import torch.nn as nn
@@ -33,6 +33,7 @@ class Client:
         mu: float = 0.0,  # FedProx proximal term coefficient (0 -> FedAvg behavior)
         num_workers: int = 2,
         transform=None,
+        exclude_classes: Optional[List[int]] = None,
     ):
         self.client_id = client_id
         self.dataset_name = dataset_name
@@ -48,6 +49,7 @@ class Client:
         self.mu = mu
         self.num_workers = num_workers
         self.transform = transform
+        self.exclude_classes = exclude_classes or []
 
         # lazy attributes
         self._dataloader = None
@@ -65,6 +67,7 @@ class Client:
             shuffle=True,
             num_workers=self.num_workers,
             transform=self.transform,
+            exclude_classes=self.exclude_classes,
         )
         return self._dataloader
 
