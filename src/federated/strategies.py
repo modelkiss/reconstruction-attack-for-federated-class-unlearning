@@ -118,3 +118,67 @@ def fedprox_aggregate(global_state: Dict[str, torch.Tensor], client_results: Lis
     Here we reuse FedAvg aggregation.
     """
     return fedavg_aggregate(global_state, client_results)
+
+
+
+
+def dp_fedavg_aggregate(
+    global_state: Dict[str, torch.Tensor],
+    client_results: List[Dict[str, Any]],
+    clip_norm: float = 1.0,
+    noise_multiplier: float = 0.0,
+    generator: Optional[torch.Generator] = None,
+):
+    """
+    Differentially-private FedAvg aggregation.
+
+    Each client update is clipped to `clip_norm` and averaged. Gaussian noise with
+    standard deviation `noise_multiplier * clip_norm` is added to each parameter.
+    Returns a new global state dict on CPU.
+    """
+
+    if not client_results:
+        return {k: v.detach().cpu().clone() for k, v in global_state.items()}
+
+    device = torch.device("cpu")
+    clip_norm = max(clip_norm, 1e-12)
+    std = max(noise_multiplier, 0.0) * clip_norm
+    generator = generator or torch.Generator(device=device)
+
+    aggregated = {
+        k: torch.zeros_like(v, dtype=torch.float32, device=device)
+        for k, v in global_state.items()
+    }
+
+    for res in client_results:
+        client_state = res["state_dict"]
+        deltas = {}
+        sq_norm = 0.0
+        for key in global_state.keys():
+            delta = client_state[key].cpu().to(torch.float32) - global_state[key].cpu().to(torch.float32)
+            deltas[key] = delta
+            sq_norm += float(torch.sum(delta ** 2).item())
+
+        norm = sq_norm ** 0.5
+        scale = 1.0
+        if clip_norm > 0.0 and norm > clip_norm:
+            scale = clip_norm / (norm + 1e-12)
+
+        for key in aggregated.keys():
+            aggregated[key] += deltas[key] * scale
+
+    num_clients = max(1, len(client_results))
+    new_state: Dict[str, torch.Tensor] = {}
+    for key, base_tensor in global_state.items():
+        update = aggregated[key] / float(num_clients)
+        if std > 0.0:
+            noise = torch.randn_like(update, generator=generator) * std
+            update = update + noise
+        updated = base_tensor.cpu().to(torch.float32) + update
+        if base_tensor.dtype in (torch.int8, torch.int16, torch.int32, torch.int64, torch.uint8):
+            updated = torch.round(updated).to(base_tensor.dtype)
+        else:
+            updated = updated.to(base_tensor.dtype)
+        new_state[key] = updated.cpu().clone()
+
+    return new_state

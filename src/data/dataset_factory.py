@@ -17,7 +17,7 @@ Key functions:
 
 import json
 from pathlib import Path
-from typing import Dict, Tuple, Optional, List, Callable
+from typing import Dict, Tuple, Optional, List, Callable, Iterable
 
 import torch
 from torch.utils.data import Dataset, DataLoader, Subset
@@ -127,6 +127,24 @@ def _build_global_index_map(train_global_indices: List[int]) -> Dict[int, int]:
     return {gidx: i for i, gidx in enumerate(train_global_indices)}
 
 
+def _filter_indices_by_classes(
+    labels: torch.Tensor,
+    indices: Iterable[int],
+    exclude_classes: Optional[List[int]] = None,
+) -> List[int]:
+    """Filter a collection of indices by excluding specified class ids."""
+    if not exclude_classes:
+        return list(indices)
+
+    exclude_set = {int(c) for c in exclude_classes}
+    filtered: List[int] = []
+    for idx in indices:
+        cls = int(labels[idx].item())
+        if cls not in exclude_set:
+            filtered.append(idx)
+    return filtered
+
+
 def build_client_dataloader(
     processed_root: str,
     dataset_name: str,
@@ -135,6 +153,7 @@ def build_client_dataloader(
     shuffle: bool = True,
     num_workers: int = 4,
     transform: Optional[Callable] = None,
+    exclude_classes: Optional[List[int]] = None,
 ) -> DataLoader:
     """
     Build a DataLoader for a single client using client_assignment in meta.json.
@@ -170,6 +189,7 @@ def build_client_dataloader(
     local_indices = [global_to_local[g] for g in client_global if g in global_to_local]
 
     dataset = CustomTensorDataset(data["train_images"], data["train_labels"], transform=transform)
+    local_indices = _filter_indices_by_classes(dataset.labels, local_indices, exclude_classes)
     subset = Subset(dataset, local_indices)
     loader = DataLoader(subset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, pin_memory=True)
     return loader
@@ -182,12 +202,16 @@ def build_global_dataloader(
     shuffle: bool = True,
     num_workers: int = 4,
     transform: Optional[Callable] = None,
+    exclude_classes: Optional[List[int]] = None,
 ) -> DataLoader:
     """
     Build a DataLoader for the full training pool (all train.pt samples).
     """
     data = load_processed_dataset(processed_root, dataset_name)
     dataset = CustomTensorDataset(data["train_images"], data["train_labels"], transform=transform)
+    indices = list(range(len(dataset)))
+    indices = _filter_indices_by_classes(dataset.labels, indices, exclude_classes)
+    dataset = Subset(dataset, indices) if len(indices) != len(dataset) else dataset
     loader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle, num_workers=num_workers, pin_memory=True)
     return loader
 

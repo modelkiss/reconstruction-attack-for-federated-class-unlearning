@@ -1,0 +1,90 @@
+experiment:
+  name: federated_unlearning_pipeline
+  seed: 42
+  device: cuda
+
+dataset:
+  eval_batch_size: 256
+  num_workers: 4
+
+model:
+  backbone: resnet20
+
+federated:
+  strategy: FedAvg
+  num_clients: 10
+  clients_per_round: 5
+  rounds: 60
+  local_epochs: 1
+  client_lr: 0.01
+  client_batch_size: 64
+
+unlearning:
+  target_class: 6
+  rounds: 20
+
+attack:
+  label_inference:
+    top_k: 3
+  reconstruction:
+    max_iters: 600
+    lr: 0.05
+    num_images: 12
+
+scenarios:
+  - name: cifar10_baseline
+    dataset:
+      name: CIFAR10
+    model:
+      backbone: resnet20
+    unlearning:
+      target_class: 6
+
+  - name: cifar10_secure
+    dataset:
+      name: CIFAR10
+    federated:
+      secure_aggregation: true
+
+  - name: cifar10_dp_medium
+    dataset:
+      name: CIFAR10
+    federated:
+      dp:
+        enabled: true
+        clip_norm: 1.0
+        noise_multiplier: 0.5
+        seed: 2024
+
+  - name: cifar100_baseline
+    dataset:
+      name: CIFAR100
+    federated:
+      rounds: 80
+      client_lr: 0.015
+    unlearning:
+      target_class: 45
+
+  - name: mnist_baseline
+    dataset:
+      name: MNIST
+    model:
+      backbone: lenet
+    federated:
+      rounds: 30
+      client_lr: 0.02
+      client_batch_size: 128
+    unlearning:
+      target_class: 3
+
+  - name: fashionmnist_baseline
+    dataset:
+      name: FashionMNIST
+    model:
+      backbone: lenet
+    federated:
+      rounds: 30
+      client_lr: 0.02
+      client_batch_size: 128
+    unlearning:
+      target_class: 7
