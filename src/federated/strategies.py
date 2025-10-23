@@ -7,8 +7,9 @@ Aggregation strategies implementations:
 - FedOpt: server-side optimizer (Adam) updates using aggregated client deltas treated as gradients
 """
 
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List
 import copy
+import typing as t
 import torch
 import torch.optim as optim
 
@@ -125,7 +126,7 @@ def dp_fedavg_aggregate(
     client_results: List[Dict[str, Any]],
     clip_norm: float = 1.0,
     noise_multiplier: float = 0.0,
-    generator: Optional[torch.Generator] = None,
+    generator: t.Optional[torch.Generator] = None,
 ):
     """
     Differentially-private FedAvg aggregation.
