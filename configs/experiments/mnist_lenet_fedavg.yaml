@@ -1,0 +1,26 @@
+experiment:
+  id: exp_mnist_lenet_fedavg
+  description: >
+    Federated training on MNIST using LeNet and FedAvg strategy.
+    Acts as the simplest baseline for sanity check of the unlearning-attack pipeline.
+  dataset: MNIST
+  model: lenet
+  strategy: FedAvg
+
+  total_rounds: 60
+  unlearn_rounds: 20
+  batch_size: 128
+  lr: 0.005
+  optimizer: sgd
+  momentum: 0.9
+  weight_decay: 1e-4
+
+  output_dir: ./outputs/experiments/mnist_lenet_fedavg
+  save_heatmaps: true
+  enable_unlearning: true
+  enable_attack: true
+  attack_method: heatmap_reconstruction
+
+  notes: >
+    Use this simple MNIST + LeNet + FedAvg combination to validate pipeline
+    correctness before applying to larger-scale datasets like CIFAR10/100.

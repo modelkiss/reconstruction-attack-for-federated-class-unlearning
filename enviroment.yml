@@ -1,0 +1,34 @@
+name: fed-unlearning-env
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.10
+  - scikit-learn>=1.2
+  - scikit-image>=0.20
+  - joblib
+  - pillow>=9.0
+  - opencv
+  - albumentations
+  - tqdm
+  - matplotlib>=3.5
+  - seaborn
+  - tensorboard
+  - pyyaml
+  - pytest  # optional
+  - pip:
+      # Use pip-installed torch if you need a specific CUDA build.
+      # If you want conda-installed torch, replace the pip torch lines with conda packages (see note below).
+      - torch>=2.1.0
+      - torchvision>=0.16.0
+      - captum>=0.6
+      - lpips>=0.1.4
+      - wandb
+      - opencv-python
+      - black
+      - pytest

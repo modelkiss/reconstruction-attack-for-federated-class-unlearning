@@ -1,0 +1,13 @@
+{
+    "unlearned_classes": [
+        5
+    ],
+    "stats": {
+        "method": "fucp",
+        "prune_fraction": 0.2,
+        "prune_mode": "zero",
+        "finetune_steps": 300,
+        "finetune_avg_loss": 2.2909024143218994,
+        "model_path": "outputs/experiments\\unlearn_20251022_202812\\unlearning_fucp\\model_after_fucp.pth"
+    }
+}

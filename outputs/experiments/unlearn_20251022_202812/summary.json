@@ -1,0 +1,9 @@
+{
+    "server_out_used": "outputs/experiments/20251021_200357__fed_exp",
+    "unlearning_out_dir": "outputs/experiments\\unlearn_20251022_202812",
+    "method": "fucp",
+    "target_classes": [
+        5
+    ],
+    "timestamp": "2025-10-22 20:29:14"
+}

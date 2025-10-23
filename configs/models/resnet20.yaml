@@ -1,0 +1,7 @@
+model:
+  name: resnet20
+  backbone: resnet20
+  num_classes: 10
+  pretrained: false
+  input_channels: 3
+  feature_dim: 64

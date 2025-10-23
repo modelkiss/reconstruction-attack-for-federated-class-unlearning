@@ -1,0 +1,4 @@
+federated:
+  strategy: FedProx
+  mu: 0.01
+  aggregation: mean

@@ -1,0 +1,13 @@
+dataset:
+  name: CIFAR100
+  data_root: ./data/processed/CIFAR100
+  num_classes: 100
+  image_size: 32
+  channels: 3
+  normalize:
+    mean: [0.5071, 0.4865, 0.4409]
+    std: [0.2673, 0.2564, 0.2762]
+  download: true
+  split:
+    train_ratio: 0.9
+    test_ratio: 0.1

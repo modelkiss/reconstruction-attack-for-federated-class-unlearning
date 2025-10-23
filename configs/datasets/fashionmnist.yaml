@@ -1,0 +1,13 @@
+dataset:
+  name: FashionMNIST
+  data_root: ./data/processed/FashionMNIST
+  num_classes: 10
+  image_size: 28
+  channels: 1
+  normalize:
+    mean: [0.2860]
+    std: [0.3530]
+  download: true
+  split:
+    train_ratio: 0.9
+    test_ratio: 0.1

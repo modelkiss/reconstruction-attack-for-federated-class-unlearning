@@ -1,0 +1,51 @@
+# configs/attack_default.yaml
+# 攻击模块的默认配置（label inference + reconstruction）
+
+attack:
+  enabled: true
+  access_level: graybox
+  # 辅助公共数据配置
+  aux_data:
+    use_auxiliary: true
+    dataset_root: ./data/auxiliary
+    aux_limit_per_class: 2000
+    preprocess: true
+    transforms:
+      resize: 32
+      normalize: true
+
+  # 标签推断设置
+  label_inference:
+    use_confidence_diff: true
+    use_heatmap_diff: true
+    confidence_diff_method: top1_prob_diff   # top1_prob_diff / KL / l2
+    topk: 5
+    heatmap_method: gradcam                   # gradcam / ig / gradients
+    heatmap_similarity_metric: cosine         # cosine / mse / pearson
+    fusion_method: logistic_regression       # logistic_regression / mlp / rule_based
+    detection_threshold: 0.5                  # 用于二值判定
+
+  # 数据重建设置
+  reconstruction:
+    method: optimization_prior
+    # 优化类方法的超参
+    optimization:
+      max_iters: 2000
+      init_lr: 0.02
+      lr_scheduler: cosine
+      restart: false
+      random_restarts: 3
+    # 生成器/GAN 相关（如果使用）
+    gan:
+      fine_tune_iters: 1000
+    # 正则项
+    regularizers:
+      tv_weight: 1e-6
+      l2_weight: 1e-4
+      perceptual_weight: 1.0
+
+  # 评估重建质量的 oracle classifier（可选）
+  oracle:
+    use_oracle: true
+    model_path: ./outputs/experiments/oracle_classifier.pth
+    topk_check: 1

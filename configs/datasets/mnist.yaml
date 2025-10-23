@@ -1,0 +1,13 @@
+dataset:
+  name: MNIST
+  data_root: ./data/processed/MNIST
+  num_classes: 10
+  image_size: 28
+  channels: 1
+  normalize:
+    mean: [0.1307]
+    std: [0.3081]
+  download: true
+  split:
+    train_ratio: 0.9
+    test_ratio: 0.1

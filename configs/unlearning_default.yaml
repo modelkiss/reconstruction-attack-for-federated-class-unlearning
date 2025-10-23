@@ -1,0 +1,49 @@
+# configs/unlearning_default.yaml
+# 用于控制与测试不同联邦遗忘算法的超参（供 run_unlearning.py 使用）
+
+unlearning:
+  # method 可选：
+  # - fucp       : 基于剪枝的联邦遗忘 (Federated Unlearning via Class Pruning)
+  # - fucrt      : 基于表示转换的联邦遗忘 (Federated Unlearning via Contrastive Representation Transformation)
+  # - fedau      : 基于反向训练的联邦主动遗忘 (Federated Adversarial Unlearning)
+  # - retrain    : 全量重训练 (Oracle baseline)
+  method: fucp
+
+  # 要遗忘的类别
+  target_classes: [5]
+
+  # FUCP 参数（剪枝式）
+  fucp:
+    pruning_rate: 0.2          # 每轮剪枝比例
+    fine_tune_lr: 1e-3         # 剪枝后微调学习率
+    fine_tune_epochs: 3        # 微调轮数
+    importance_metric: l1      # l1 / l2 / grad_importance
+    min_remaining_ratio: 0.3   # 剩余参数下限比例
+
+  # FUCRT 参数（表示转换）
+  fucrt:
+    contrastive_temp: 0.07
+    transform_epochs: 5
+    lr: 1e-4
+    projection_dim: 128
+    reg_lambda: 0.1
+
+  # FedAU 参数（反向训练）
+  fedau:
+    lr: 1e-3
+    local_epochs: 1
+    adv_lambda: 0.5
+    noise_scale: 0.02
+    max_steps: 500
+
+  # Retrain baseline
+  retrain:
+    retrain_epochs: 50
+    retrain_lr: 0.01
+    batch_size: 128
+
+  # 通用项
+  save_intermediate: true
+  intermediate_save_interval: 5
+  output_dir: ./outputs/unlearning_experiments
+  device: cuda

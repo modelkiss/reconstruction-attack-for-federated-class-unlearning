@@ -1,0 +1,6 @@
+model:
+  name: lenet
+  backbone: lenet
+  num_classes: 10
+  input_channels: 1
+  pretrained: false

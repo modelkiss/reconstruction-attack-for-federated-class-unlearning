@@ -1,0 +1,44 @@
+# configs/default.yaml
+# 全局默认配置
+seed: 42
+device: cuda
+
+logging:
+  log_interval: 50
+  save_interval: 1
+  tensorboard: true
+  verbose: true
+
+training:
+  batch_size: 128
+  epochs: 100
+  lr: 0.01
+  optimizer: sgd
+  momentum: 0.9
+  weight_decay: 5e-4
+  scheduler: step
+  step_size: 30
+  gamma: 0.1
+
+federated:
+  total_rounds: 100
+  clients_per_round: 10
+  num_clients: 20
+  aggregation: FedAvg
+
+unlearning:
+  enabled: false
+  method: retrain
+  unlearn_rounds: 20
+
+attack:
+  enabled: false
+  method: reconstruction
+  label_inference: true
+  heatmap_comparison: true
+
+output:
+  root_dir: ./outputs
+  save_models: true
+  save_heatmaps: true
+  save_reconstructions: true

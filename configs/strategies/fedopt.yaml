@@ -1,0 +1,5 @@
+federated:
+  strategy: FedOpt
+  server_lr: 0.001
+  momentum: 0.9
+  aggregation: adaptive

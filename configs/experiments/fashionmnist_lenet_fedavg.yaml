@@ -1,0 +1,26 @@
+experiment:
+  id: exp_fashionmnist_lenet_fedavg
+  description: >
+    Federated training on FashionMNIST using LeNet and FedAvg strategy.
+    Lightweight baseline for grayscale image datasets.
+  dataset: FashionMNIST
+  model: lenet
+  strategy: FedAvg
+
+  total_rounds: 80
+  unlearn_rounds: 30
+  batch_size: 128
+  lr: 0.005
+  optimizer: sgd
+  momentum: 0.9
+  weight_decay: 1e-4
+
+  output_dir: ./outputs/experiments/fashionmnist_lenet_fedavg
+  save_heatmaps: true
+  enable_unlearning: true
+  enable_attack: true
+  attack_method: heatmap_reconstruction
+
+  notes: >
+    FashionMNIST serves as a structured grayscale benchmark for evaluating 
+    the effect of class-level unlearning on low-complexity domains.

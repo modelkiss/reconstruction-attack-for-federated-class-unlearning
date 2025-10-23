@@ -1,0 +1,1213 @@
+2025-10-21 20:03:57,155 | INFO | Logging initialized. Log file: outputs/experiments\run_20251021_200357\run_federated_20251021_200357.log
+2025-10-21 20:03:57,155 | INFO | Starting run_federated
+2025-10-21 20:03:57,156 | INFO | Config paths: default=configs/default.yaml, experiment=configs/experiments/cifar10_resnet20_fedavg.yaml
+2025-10-21 20:03:57,156 | INFO | Device: cuda, Seed: 42
+2025-10-21 20:03:57,157 | INFO | Logging initialized. Log file: outputs/experiments\20251021_200357__fed_exp\server_20251021_200357.log
+2025-10-21 20:03:57,158 | INFO | Server output_dir: outputs/experiments\20251021_200357__fed_exp
+2025-10-21 20:03:57,325 | INFO | Initialized global model resnet20 with 272474 params
+2025-10-21 20:03:57,327 | INFO | Federated config: strategy=FedAvg, num_clients=20, client_frac=0.1, clients_per_round=10, total_rounds=100
+2025-10-21 20:03:57,332 | INFO | Merged config saved: outputs/experiments\20251021_200357__fed_exp\config.yaml
+2025-10-21 20:03:57,332 | INFO | Launching federated training (Server.run)...
+2025-10-21 20:03:57,333 | INFO | Round 1/100 - selected clients: [3, 0, 8, 7, 16, 2, 11, 1, 10, 17]
+2025-10-21 20:04:12,373 | INFO |   client 3 - samples 2250 - loss 2.3369
+2025-10-21 20:04:28,753 | INFO |   client 0 - samples 2250 - loss 2.3468
+2025-10-21 20:04:43,541 | INFO |   client 8 - samples 2250 - loss 2.3441
+2025-10-21 20:04:59,437 | INFO |   client 7 - samples 2250 - loss 2.3406
+2025-10-21 20:05:10,770 | INFO |   client 16 - samples 2250 - loss 2.3320
+2025-10-21 20:05:25,936 | INFO |   client 2 - samples 2250 - loss 2.3489
+2025-10-21 20:05:41,757 | INFO |   client 11 - samples 2250 - loss 2.3332
+2025-10-21 20:05:58,474 | INFO |   client 1 - samples 2250 - loss 2.3371
+2025-10-21 20:06:14,481 | INFO |   client 10 - samples 2250 - loss 2.3457
+2025-10-21 20:06:29,122 | INFO |   client 17 - samples 2250 - loss 2.3439
+2025-10-21 20:06:29,161 | INFO | Round 1 completed in 151.8s
+2025-10-21 20:06:29,161 | INFO | Round 2/100 - selected clients: [1, 9, 4, 14, 11, 10, 15, 12, 19, 7]
+2025-10-21 20:06:47,034 | INFO |   client 1 - samples 2250 - loss 2.2734
+2025-10-21 20:07:03,127 | INFO |   client 9 - samples 2250 - loss 2.2927
+2025-10-21 20:07:17,566 | INFO |   client 4 - samples 2250 - loss 2.2777
+2025-10-21 20:07:31,625 | INFO |   client 14 - samples 2250 - loss 2.2913
+2025-10-21 20:07:46,674 | INFO |   client 11 - samples 2250 - loss 2.2828
+2025-10-21 20:08:01,344 | INFO |   client 10 - samples 2250 - loss 2.2927
+2025-10-21 20:08:18,109 | INFO |   client 15 - samples 2250 - loss 2.2811
+2025-10-21 20:08:33,181 | INFO |   client 12 - samples 2250 - loss 2.2826
+2025-10-21 20:08:47,756 | INFO |   client 19 - samples 2250 - loss 2.2897
+2025-10-21 20:09:02,633 | INFO |   client 7 - samples 2250 - loss 2.2665
+2025-10-21 20:09:02,670 | INFO | Round 2 completed in 153.5s
+2025-10-21 20:09:02,670 | INFO | Round 3/100 - selected clients: [13, 16, 17, 3, 5, 6, 18, 4, 0, 19]
+2025-10-21 20:09:17,314 | INFO |   client 13 - samples 2250 - loss 2.2189
+2025-10-21 20:09:36,289 | INFO |   client 16 - samples 2250 - loss 2.2340
+2025-10-21 20:09:51,472 | INFO |   client 17 - samples 2250 - loss 2.2316
+2025-10-21 20:10:06,741 | INFO |   client 3 - samples 2250 - loss 2.2240
+2025-10-21 20:10:21,703 | INFO |   client 5 - samples 2250 - loss 2.2052
+2025-10-21 20:10:36,902 | INFO |   client 6 - samples 2250 - loss 2.2333
+2025-10-21 20:10:52,371 | INFO |   client 18 - samples 2250 - loss 2.2254
+2025-10-21 20:11:07,675 | INFO |   client 4 - samples 2250 - loss 2.2201
+2025-10-21 20:11:23,696 | INFO |   client 0 - samples 2250 - loss 2.2358
+2025-10-21 20:11:39,775 | INFO |   client 19 - samples 2250 - loss 2.2408
+2025-10-21 20:11:39,817 | INFO | Round 3 completed in 157.1s
+2025-10-21 20:11:39,817 | INFO | Round 4/100 - selected clients: [8, 13, 15, 19, 2, 4, 5, 0, 1, 7]
+2025-10-21 20:11:56,150 | INFO |   client 8 - samples 2250 - loss 2.1896
+2025-10-21 20:12:12,535 | INFO |   client 13 - samples 2250 - loss 2.1760
+2025-10-21 20:12:28,595 | INFO |   client 15 - samples 2250 - loss 2.2029
+2025-10-21 20:12:44,612 | INFO |   client 19 - samples 2250 - loss 2.2003
+2025-10-21 20:13:00,263 | INFO |   client 2 - samples 2250 - loss 2.1938
+2025-10-21 20:13:16,173 | INFO |   client 4 - samples 2250 - loss 2.1784
+2025-10-21 20:13:33,883 | INFO |   client 5 - samples 2250 - loss 2.1632
+2025-10-21 20:13:50,363 | INFO |   client 0 - samples 2250 - loss 2.2057
+2025-10-21 20:14:10,067 | INFO |   client 1 - samples 2250 - loss 2.1818
+2025-10-21 20:14:27,277 | INFO |   client 7 - samples 2250 - loss 2.1771
+2025-10-21 20:14:27,328 | INFO | Round 4 completed in 167.5s
+2025-10-21 20:14:27,328 | INFO | Round 5/100 - selected clients: [2, 12, 1, 7, 4, 9, 8, 18, 0, 11]
+2025-10-21 20:14:44,680 | INFO |   client 2 - samples 2250 - loss 2.1656
+2025-10-21 20:15:00,265 | INFO |   client 12 - samples 2250 - loss 2.1634
+2025-10-21 20:15:17,853 | INFO |   client 1 - samples 2250 - loss 2.1514
+2025-10-21 20:15:36,923 | INFO |   client 7 - samples 2250 - loss 2.1454
+2025-10-21 20:15:54,607 | INFO |   client 4 - samples 2250 - loss 2.1490
+2025-10-21 20:16:14,073 | INFO |   client 9 - samples 2250 - loss 2.1687
+2025-10-21 20:16:26,752 | INFO |   client 8 - samples 2250 - loss 2.1661
+2025-10-21 20:16:39,734 | INFO |   client 18 - samples 2250 - loss 2.1677
+2025-10-21 20:16:53,017 | INFO |   client 0 - samples 2250 - loss 2.1762
+2025-10-21 20:17:12,787 | INFO |   client 11 - samples 2250 - loss 2.1608
+2025-10-21 20:17:12,832 | INFO | Round 5 completed in 165.5s
+2025-10-21 20:17:12,832 | INFO | Round 6/100 - selected clients: [11, 2, 13, 14, 10, 4, 8, 6, 12, 9]
+2025-10-21 20:17:30,280 | INFO |   client 11 - samples 2250 - loss 2.1270
+2025-10-21 20:17:45,808 | INFO |   client 2 - samples 2250 - loss 2.1338
+2025-10-21 20:18:02,110 | INFO |   client 13 - samples 2250 - loss 2.1243
+2025-10-21 20:18:19,015 | INFO |   client 14 - samples 2250 - loss 2.1502
+2025-10-21 20:18:33,710 | INFO |   client 10 - samples 2250 - loss 2.1515
+2025-10-21 20:18:50,881 | INFO |   client 4 - samples 2250 - loss 2.1189
+2025-10-21 20:19:08,768 | INFO |   client 8 - samples 2250 - loss 2.1365
+2025-10-21 20:19:27,587 | INFO |   client 6 - samples 2250 - loss 2.1467
+2025-10-21 20:19:38,484 | INFO |   client 12 - samples 2250 - loss 2.1289
+2025-10-21 20:19:55,867 | INFO |   client 9 - samples 2250 - loss 2.1406
+2025-10-21 20:19:55,906 | INFO | Round 6 completed in 163.1s
+2025-10-21 20:19:55,907 | INFO | Round 7/100 - selected clients: [17, 10, 4, 9, 6, 11, 12, 15, 2, 14]
+2025-10-21 20:20:07,721 | INFO |   client 17 - samples 2250 - loss 2.1144
+2025-10-21 20:20:20,413 | INFO |   client 10 - samples 2250 - loss 2.1208
+2025-10-21 20:20:35,797 | INFO |   client 4 - samples 2250 - loss 2.0897
+2025-10-21 20:20:53,314 | INFO |   client 9 - samples 2250 - loss 2.1076
+2025-10-21 20:21:08,584 | INFO |   client 6 - samples 2250 - loss 2.1164
+2025-10-21 20:21:21,050 | INFO |   client 11 - samples 2250 - loss 2.0951
+2025-10-21 20:21:32,597 | INFO |   client 12 - samples 2250 - loss 2.0973
+2025-10-21 20:21:49,784 | INFO |   client 15 - samples 2250 - loss 2.1344
+2025-10-21 20:22:05,043 | INFO |   client 2 - samples 2250 - loss 2.1019
+2025-10-21 20:22:21,444 | INFO |   client 14 - samples 2250 - loss 2.1134
+2025-10-21 20:22:21,500 | INFO | Round 7 completed in 145.6s
+2025-10-21 20:22:21,501 | INFO | Round 8/100 - selected clients: [2, 11, 13, 3, 10, 12, 8, 17, 0, 15]
+2025-10-21 20:22:43,905 | INFO |   client 2 - samples 2250 - loss 2.0709
+2025-10-21 20:22:59,410 | INFO |   client 11 - samples 2250 - loss 2.0638
+2025-10-21 20:23:17,679 | INFO |   client 13 - samples 2250 - loss 2.0729
+2025-10-21 20:23:41,209 | INFO |   client 3 - samples 2250 - loss 2.0805
+2025-10-21 20:24:05,082 | INFO |   client 10 - samples 2250 - loss 2.0926
+2025-10-21 20:24:18,234 | INFO |   client 12 - samples 2250 - loss 2.0693
+2025-10-21 20:24:34,593 | INFO |   client 8 - samples 2250 - loss 2.0968
+2025-10-21 20:24:49,327 | INFO |   client 17 - samples 2250 - loss 2.0832
+2025-10-21 20:25:05,170 | INFO |   client 0 - samples 2250 - loss 2.1051
+2025-10-21 20:25:21,750 | INFO |   client 15 - samples 2250 - loss 2.0932
+2025-10-21 20:25:21,801 | INFO | Round 8 completed in 180.3s
+2025-10-21 20:25:21,801 | INFO | Round 9/100 - selected clients: [15, 8, 11, 7, 19, 12, 5, 1, 18, 13]
+2025-10-21 20:25:36,806 | INFO |   client 15 - samples 2250 - loss 2.0647
+2025-10-21 20:25:52,890 | INFO |   client 8 - samples 2250 - loss 2.0725
+2025-10-21 20:26:08,490 | INFO |   client 11 - samples 2250 - loss 2.0402
+2025-10-21 20:26:24,167 | INFO |   client 7 - samples 2250 - loss 2.0516
+2025-10-21 20:26:40,275 | INFO |   client 19 - samples 2250 - loss 2.0776
+2025-10-21 20:27:01,876 | INFO |   client 12 - samples 2250 - loss 2.0417
+2025-10-21 20:27:17,477 | INFO |   client 5 - samples 2250 - loss 2.0463
+2025-10-21 20:27:35,436 | INFO |   client 1 - samples 2250 - loss 2.0433
+2025-10-21 20:27:52,232 | INFO |   client 18 - samples 2250 - loss 2.0547
+2025-10-21 20:28:08,893 | INFO |   client 13 - samples 2250 - loss 2.0426
+2025-10-21 20:28:08,932 | INFO | Round 9 completed in 167.1s
+2025-10-21 20:28:08,932 | INFO | Round 10/100 - selected clients: [7, 16, 17, 5, 19, 13, 3, 8, 4, 6]
+2025-10-21 20:28:25,854 | INFO |   client 7 - samples 2250 - loss 2.0208
+2025-10-21 20:28:41,632 | INFO |   client 16 - samples 2250 - loss 2.0568
+2025-10-21 20:28:58,302 | INFO |   client 17 - samples 2250 - loss 2.0337
+2025-10-21 20:29:13,826 | INFO |   client 5 - samples 2250 - loss 2.0250
+2025-10-21 20:29:29,794 | INFO |   client 19 - samples 2250 - loss 2.0511
+2025-10-21 20:29:46,627 | INFO |   client 13 - samples 2250 - loss 2.0154
+2025-10-21 20:30:02,483 | INFO |   client 3 - samples 2250 - loss 2.0274
+2025-10-21 20:30:18,162 | INFO |   client 8 - samples 2250 - loss 2.0464
+2025-10-21 20:30:34,089 | INFO |   client 4 - samples 2250 - loss 2.0317
+2025-10-21 20:30:50,262 | INFO |   client 6 - samples 2250 - loss 2.0497
+2025-10-21 20:30:50,304 | INFO | Round 10 completed in 161.4s
+2025-10-21 20:30:50,305 | INFO | Round 11/100 - selected clients: [8, 1, 16, 15, 11, 6, 0, 2, 12, 14]
+2025-10-21 20:31:07,342 | INFO |   client 8 - samples 2250 - loss 2.0159
+2025-10-21 20:31:22,887 | INFO |   client 1 - samples 2250 - loss 1.9875
+2025-10-21 20:31:39,987 | INFO |   client 16 - samples 2250 - loss 2.0300
+2025-10-21 20:31:55,844 | INFO |   client 15 - samples 2250 - loss 2.0146
+2025-10-21 20:32:11,409 | INFO |   client 11 - samples 2250 - loss 1.9915
+2025-10-21 20:32:27,128 | INFO |   client 6 - samples 2250 - loss 2.0252
+2025-10-21 20:32:42,391 | INFO |   client 0 - samples 2250 - loss 2.0317
+2025-10-21 20:32:57,954 | INFO |   client 2 - samples 2250 - loss 2.0132
+2025-10-21 20:33:14,443 | INFO |   client 12 - samples 2250 - loss 1.9957
+2025-10-21 20:33:29,943 | INFO |   client 14 - samples 2250 - loss 2.0189
+2025-10-21 20:33:29,982 | INFO | Round 11 completed in 159.7s
+2025-10-21 20:33:29,982 | INFO | Round 12/100 - selected clients: [19, 6, 14, 16, 15, 17, 11, 8, 5, 7]
+2025-10-21 20:33:48,672 | INFO |   client 19 - samples 2250 - loss 2.0078
+2025-10-21 20:34:07,962 | INFO |   client 6 - samples 2250 - loss 1.9958
+2025-10-21 20:34:24,689 | INFO |   client 14 - samples 2250 - loss 1.9898
+2025-10-21 20:34:46,420 | INFO |   client 16 - samples 2250 - loss 1.9972
+2025-10-21 20:35:02,518 | INFO |   client 15 - samples 2250 - loss 1.9818
+2025-10-21 20:35:18,701 | INFO |   client 17 - samples 2250 - loss 1.9810
+2025-10-21 20:35:35,099 | INFO |   client 11 - samples 2250 - loss 1.9676
+2025-10-21 20:35:51,004 | INFO |   client 8 - samples 2250 - loss 1.9977
+2025-10-21 20:36:07,930 | INFO |   client 5 - samples 2250 - loss 1.9792
+2025-10-21 20:36:26,167 | INFO |   client 7 - samples 2250 - loss 1.9747
+2025-10-21 20:36:26,202 | INFO | Round 12 completed in 176.2s
+2025-10-21 20:36:26,202 | INFO | Round 13/100 - selected clients: [4, 14, 17, 9, 15, 18, 7, 6, 3, 13]
+2025-10-21 20:36:42,071 | INFO |   client 4 - samples 2250 - loss 1.9573
+2025-10-21 20:36:57,760 | INFO |   client 14 - samples 2250 - loss 1.9667
+2025-10-21 20:37:15,300 | INFO |   client 17 - samples 2250 - loss 1.9544
+2025-10-21 20:37:30,414 | INFO |   client 9 - samples 2250 - loss 1.9611
+2025-10-21 20:37:45,629 | INFO |   client 15 - samples 2250 - loss 1.9516
+2025-10-21 20:38:01,591 | INFO |   client 18 - samples 2250 - loss 1.9697
+2025-10-21 20:38:18,411 | INFO |   client 7 - samples 2250 - loss 1.9452
+2025-10-21 20:38:34,820 | INFO |   client 6 - samples 2250 - loss 1.9737
+2025-10-21 20:38:50,957 | INFO |   client 3 - samples 2250 - loss 1.9649
+2025-10-21 20:39:07,003 | INFO |   client 13 - samples 2250 - loss 1.9534
+2025-10-21 20:39:07,054 | INFO | Round 13 completed in 160.9s
+2025-10-21 20:39:07,055 | INFO | Round 14/100 - selected clients: [2, 6, 4, 9, 19, 11, 15, 17, 1, 5]
+2025-10-21 20:39:24,259 | INFO |   client 2 - samples 2250 - loss 1.9578
+2025-10-21 20:39:39,318 | INFO |   client 6 - samples 2250 - loss 1.9474
+2025-10-21 20:39:56,879 | INFO |   client 4 - samples 2250 - loss 1.9311
+2025-10-21 20:40:13,567 | INFO |   client 9 - samples 2250 - loss 1.9260
+2025-10-21 20:40:33,491 | INFO |   client 19 - samples 2250 - loss 1.9622
+2025-10-21 20:40:56,212 | INFO |   client 11 - samples 2250 - loss 1.9245
+2025-10-21 20:41:18,373 | INFO |   client 15 - samples 2250 - loss 1.9243
+2025-10-21 20:41:38,895 | INFO |   client 17 - samples 2250 - loss 1.9270
+2025-10-21 20:41:56,569 | INFO |   client 1 - samples 2250 - loss 1.9180
+2025-10-21 20:42:13,150 | INFO |   client 5 - samples 2250 - loss 1.9444
+2025-10-21 20:42:13,187 | INFO | Round 14 completed in 186.1s
+2025-10-21 20:42:13,187 | INFO | Round 15/100 - selected clients: [17, 0, 15, 16, 9, 12, 8, 6, 11, 3]
+2025-10-21 20:42:29,643 | INFO |   client 17 - samples 2250 - loss 1.9019
+2025-10-21 20:42:45,089 | INFO |   client 0 - samples 2250 - loss 1.9498
+2025-10-21 20:43:01,765 | INFO |   client 15 - samples 2250 - loss 1.9058
+2025-10-21 20:43:17,378 | INFO |   client 16 - samples 2250 - loss 1.9342
+2025-10-21 20:43:32,670 | INFO |   client 9 - samples 2250 - loss 1.9038
+2025-10-21 20:43:51,750 | INFO |   client 12 - samples 2250 - loss 1.9176
+2025-10-21 20:44:07,819 | INFO |   client 8 - samples 2250 - loss 1.9554
+2025-10-21 20:44:24,424 | INFO |   client 6 - samples 2250 - loss 1.9245
+2025-10-21 20:44:40,083 | INFO |   client 11 - samples 2250 - loss 1.9029
+2025-10-21 20:44:56,247 | INFO |   client 3 - samples 2250 - loss 1.9267
+2025-10-21 20:44:56,289 | INFO | Round 15 completed in 163.1s
+2025-10-21 20:44:56,290 | INFO | Round 16/100 - selected clients: [1, 11, 0, 7, 10, 16, 4, 6, 15, 12]
+2025-10-21 20:45:12,864 | INFO |   client 1 - samples 2250 - loss 1.8790
+2025-10-21 20:45:30,145 | INFO |   client 11 - samples 2250 - loss 1.8803
+2025-10-21 20:45:45,904 | INFO |   client 0 - samples 2250 - loss 1.9231
+2025-10-21 20:46:02,047 | INFO |   client 7 - samples 2250 - loss 1.8960
+2025-10-21 20:46:18,268 | INFO |   client 10 - samples 2250 - loss 1.9557
+2025-10-21 20:46:34,347 | INFO |   client 16 - samples 2250 - loss 1.9104
+2025-10-21 20:46:49,888 | INFO |   client 4 - samples 2250 - loss 1.9051
+2025-10-21 20:47:06,896 | INFO |   client 6 - samples 2250 - loss 1.9015
+2025-10-21 20:47:23,900 | INFO |   client 15 - samples 2250 - loss 1.8858
+2025-10-21 20:47:39,247 | INFO |   client 12 - samples 2250 - loss 1.8867
+2025-10-21 20:47:39,281 | INFO | Round 16 completed in 163.0s
+2025-10-21 20:47:39,281 | INFO | Round 17/100 - selected clients: [18, 6, 19, 17, 1, 3, 7, 16, 5, 4]
+2025-10-21 20:47:55,542 | INFO |   client 18 - samples 2250 - loss 1.8910
+2025-10-21 20:48:13,875 | INFO |   client 6 - samples 2250 - loss 1.8825
+2025-10-21 20:48:29,817 | INFO |   client 19 - samples 2250 - loss 1.9123
+2025-10-21 20:48:51,101 | INFO |   client 17 - samples 2250 - loss 1.8721
+2025-10-21 20:49:08,809 | INFO |   client 1 - samples 2250 - loss 1.8586
+2025-10-21 20:49:24,998 | INFO |   client 3 - samples 2250 - loss 1.8857
+2025-10-21 20:49:40,667 | INFO |   client 7 - samples 2250 - loss 1.8728
+2025-10-21 20:49:56,162 | INFO |   client 16 - samples 2250 - loss 1.8885
+2025-10-21 20:50:11,814 | INFO |   client 5 - samples 2250 - loss 1.8999
+2025-10-21 20:50:32,020 | INFO |   client 4 - samples 2250 - loss 1.8753
+2025-10-21 20:50:32,058 | INFO | Round 17 completed in 172.8s
+2025-10-21 20:50:32,059 | INFO | Round 18/100 - selected clients: [7, 2, 14, 0, 4, 13, 15, 11, 16, 10]
+2025-10-21 20:50:47,259 | INFO |   client 7 - samples 2250 - loss 1.8495
+2025-10-21 20:51:08,176 | INFO |   client 2 - samples 2250 - loss 1.9023
+2025-10-21 20:51:29,055 | INFO |   client 14 - samples 2250 - loss 1.9066
+2025-10-21 20:51:44,904 | INFO |   client 0 - samples 2250 - loss 1.8941
+2025-10-21 20:52:00,797 | INFO |   client 4 - samples 2250 - loss 1.8524
+2025-10-21 20:52:16,702 | INFO |   client 13 - samples 2250 - loss 1.8821
+2025-10-21 20:52:33,485 | INFO |   client 15 - samples 2250 - loss 1.8612
+2025-10-21 20:52:48,716 | INFO |   client 11 - samples 2250 - loss 1.8588
+2025-10-21 20:53:05,108 | INFO |   client 16 - samples 2250 - loss 1.8634
+2025-10-21 20:53:24,642 | INFO |   client 10 - samples 2250 - loss 1.9211
+2025-10-21 20:53:24,678 | INFO | Round 18 completed in 172.6s
+2025-10-21 20:53:24,679 | INFO | Round 19/100 - selected clients: [9, 19, 4, 8, 7, 12, 15, 13, 5, 0]
+2025-10-21 20:53:42,617 | INFO |   client 9 - samples 2250 - loss 1.8561
+2025-10-21 20:54:00,163 | INFO |   client 19 - samples 2250 - loss 1.8763
+2025-10-21 20:54:16,100 | INFO |   client 4 - samples 2250 - loss 1.8315
+2025-10-21 20:54:31,992 | INFO |   client 8 - samples 2250 - loss 1.8986
+2025-10-21 20:54:47,249 | INFO |   client 7 - samples 2250 - loss 1.8303
+2025-10-21 20:55:02,654 | INFO |   client 12 - samples 2250 - loss 1.8417
+2025-10-21 20:55:18,463 | INFO |   client 15 - samples 2250 - loss 1.8463
+2025-10-21 20:55:35,630 | INFO |   client 13 - samples 2250 - loss 1.8570
+2025-10-21 20:55:52,893 | INFO |   client 5 - samples 2250 - loss 1.8717
+2025-10-21 20:56:08,849 | INFO |   client 0 - samples 2250 - loss 1.8692
+2025-10-21 20:56:08,896 | INFO | Round 19 completed in 164.2s
+2025-10-21 20:56:08,896 | INFO | Round 20/100 - selected clients: [15, 5, 17, 6, 10, 4, 18, 12, 11, 0]
+2025-10-21 20:56:28,250 | INFO |   client 15 - samples 2250 - loss 1.8298
+2025-10-21 20:56:46,058 | INFO |   client 5 - samples 2250 - loss 1.8462
+2025-10-21 20:57:09,669 | INFO |   client 17 - samples 2250 - loss 1.8276
+2025-10-21 20:57:21,811 | INFO |   client 6 - samples 2250 - loss 1.8578
+2025-10-21 20:57:37,165 | INFO |   client 10 - samples 2250 - loss 1.8937
+2025-10-21 20:57:53,874 | INFO |   client 4 - samples 2250 - loss 1.8115
+2025-10-21 20:58:09,346 | INFO |   client 18 - samples 2250 - loss 1.8518
+2025-10-21 20:58:24,797 | INFO |   client 12 - samples 2250 - loss 1.8210
+2025-10-21 20:58:42,216 | INFO |   client 11 - samples 2250 - loss 1.8331
+2025-10-21 20:58:58,560 | INFO |   client 0 - samples 2250 - loss 1.8478
+2025-10-21 20:58:58,604 | INFO | Round 20 completed in 169.7s
+2025-10-21 20:58:58,604 | INFO | Round 21/100 - selected clients: [18, 5, 2, 7, 14, 4, 10, 19, 17, 8]
+2025-10-21 20:59:15,504 | INFO |   client 18 - samples 2250 - loss 1.8260
+2025-10-21 20:59:38,615 | INFO |   client 5 - samples 2250 - loss 1.8192
+2025-10-21 20:59:58,256 | INFO |   client 2 - samples 2250 - loss 1.8609
+2025-10-21 21:00:23,519 | INFO |   client 7 - samples 2250 - loss 1.8094
+2025-10-21 21:00:38,680 | INFO |   client 14 - samples 2250 - loss 1.8684
+2025-10-21 21:00:55,277 | INFO |   client 4 - samples 2250 - loss 1.7878
+2025-10-21 21:01:11,921 | INFO |   client 10 - samples 2250 - loss 1.8701
+2025-10-21 21:01:27,382 | INFO |   client 19 - samples 2250 - loss 1.8458
+2025-10-21 21:01:42,963 | INFO |   client 17 - samples 2250 - loss 1.8075
+2025-10-21 21:01:59,561 | INFO |   client 8 - samples 2250 - loss 1.8717
+2025-10-21 21:01:59,615 | INFO | Round 21 completed in 181.0s
+2025-10-21 21:01:59,616 | INFO | Round 22/100 - selected clients: [14, 19, 9, 8, 15, 10, 1, 6, 11, 13]
+2025-10-21 21:02:16,672 | INFO |   client 14 - samples 2250 - loss 1.8425
+2025-10-21 21:02:32,823 | INFO |   client 19 - samples 2250 - loss 1.8190
+2025-10-21 21:02:48,423 | INFO |   client 9 - samples 2250 - loss 1.8252
+2025-10-21 21:03:13,045 | INFO |   client 8 - samples 2250 - loss 1.8502
+2025-10-21 21:03:29,852 | INFO |   client 15 - samples 2250 - loss 1.8068
+2025-10-21 21:03:46,628 | INFO |   client 10 - samples 2250 - loss 1.8457
+2025-10-21 21:04:01,483 | INFO |   client 1 - samples 2250 - loss 1.8106
+2025-10-21 21:04:17,581 | INFO |   client 6 - samples 2250 - loss 1.8299
+2025-10-21 21:04:34,892 | INFO |   client 11 - samples 2250 - loss 1.8050
+2025-10-21 21:04:51,146 | INFO |   client 13 - samples 2250 - loss 1.8208
+2025-10-21 21:04:51,190 | INFO | Round 22 completed in 171.6s
+2025-10-21 21:04:51,190 | INFO | Round 23/100 - selected clients: [15, 3, 12, 0, 6, 4, 11, 17, 10, 18]
+2025-10-21 21:05:08,582 | INFO |   client 15 - samples 2250 - loss 1.7845
+2025-10-21 21:05:25,757 | INFO |   client 3 - samples 2250 - loss 1.8221
+2025-10-21 21:05:39,248 | INFO |   client 12 - samples 2250 - loss 1.7879
+2025-10-21 21:05:55,540 | INFO |   client 0 - samples 2250 - loss 1.8252
+2025-10-21 21:06:10,744 | INFO |   client 6 - samples 2250 - loss 1.8088
+2025-10-21 21:06:26,811 | INFO |   client 4 - samples 2250 - loss 1.7695
+2025-10-21 21:06:42,835 | INFO |   client 11 - samples 2250 - loss 1.7812
+2025-10-21 21:07:01,649 | INFO |   client 17 - samples 2250 - loss 1.7778
+2025-10-21 21:07:18,277 | INFO |   client 10 - samples 2250 - loss 1.8167
+2025-10-21 21:07:35,254 | INFO |   client 18 - samples 2250 - loss 1.7976
+2025-10-21 21:07:35,290 | INFO | Round 23 completed in 164.1s
+2025-10-21 21:07:35,291 | INFO | Round 24/100 - selected clients: [13, 9, 18, 16, 7, 15, 14, 8, 19, 12]
+2025-10-21 21:07:50,897 | INFO |   client 13 - samples 2250 - loss 1.7898
+2025-10-21 21:08:08,492 | INFO |   client 9 - samples 2250 - loss 1.8035
+2025-10-21 21:08:23,702 | INFO |   client 18 - samples 2250 - loss 1.7732
+2025-10-21 21:08:38,484 | INFO |   client 16 - samples 2250 - loss 1.8246
+2025-10-21 21:08:54,476 | INFO |   client 7 - samples 2250 - loss 1.7833
+2025-10-21 21:09:10,578 | INFO |   client 15 - samples 2250 - loss 1.7687
+2025-10-21 21:09:26,792 | INFO |   client 14 - samples 2250 - loss 1.8198
+2025-10-21 21:09:42,101 | INFO |   client 8 - samples 2250 - loss 1.8184
+2025-10-21 21:09:59,779 | INFO |   client 19 - samples 2250 - loss 1.7912
+2025-10-21 21:10:16,220 | INFO |   client 12 - samples 2250 - loss 1.7658
+2025-10-21 21:10:16,260 | INFO | Round 24 completed in 161.0s
+2025-10-21 21:10:16,261 | INFO | Round 25/100 - selected clients: [2, 9, 13, 7, 14, 4, 15, 12, 8, 1]
+2025-10-21 21:10:33,053 | INFO |   client 2 - samples 2250 - loss 1.8235
+2025-10-21 21:10:52,731 | INFO |   client 9 - samples 2250 - loss 1.7750
+2025-10-21 21:11:09,827 | INFO |   client 13 - samples 2250 - loss 1.7625
+2025-10-21 21:11:27,286 | INFO |   client 7 - samples 2250 - loss 1.7551
+2025-10-21 21:11:52,017 | INFO |   client 14 - samples 2250 - loss 1.7897
+2025-10-21 21:12:07,963 | INFO |   client 4 - samples 2250 - loss 1.7431
+2025-10-21 21:12:29,122 | INFO |   client 15 - samples 2250 - loss 1.7417
+2025-10-21 21:12:45,567 | INFO |   client 12 - samples 2250 - loss 1.7402
+2025-10-21 21:13:05,289 | INFO |   client 8 - samples 2250 - loss 1.7949
+2025-10-21 21:13:23,204 | INFO |   client 1 - samples 2250 - loss 1.7818
+2025-10-21 21:13:23,241 | INFO | Round 25 completed in 187.0s
+2025-10-21 21:13:23,241 | INFO | Round 26/100 - selected clients: [2, 3, 13, 14, 17, 4, 9, 6, 7, 15]
+2025-10-21 21:13:44,666 | INFO |   client 2 - samples 2250 - loss 1.7935
+2025-10-21 21:13:59,184 | INFO |   client 3 - samples 2250 - loss 1.7883
+2025-10-21 21:14:18,203 | INFO |   client 13 - samples 2250 - loss 1.7377
+2025-10-21 21:14:35,513 | INFO |   client 14 - samples 2250 - loss 1.7693
+2025-10-21 21:14:58,192 | INFO |   client 17 - samples 2250 - loss 1.7396
+2025-10-21 21:15:13,911 | INFO |   client 4 - samples 2250 - loss 1.7201
+2025-10-21 21:15:42,523 | INFO |   client 9 - samples 2250 - loss 1.7535
+2025-10-21 21:15:59,181 | INFO |   client 6 - samples 2250 - loss 1.7817
+2025-10-21 21:16:22,606 | INFO |   client 7 - samples 2250 - loss 1.7322
+2025-10-21 21:16:36,796 | INFO |   client 15 - samples 2250 - loss 1.7108
+2025-10-21 21:16:36,835 | INFO | Round 26 completed in 193.6s
+2025-10-21 21:16:36,836 | INFO | Round 27/100 - selected clients: [14, 16, 3, 7, 13, 18, 4, 11, 10, 5]
+2025-10-21 21:16:52,966 | INFO |   client 14 - samples 2250 - loss 1.7499
+2025-10-21 21:17:07,787 | INFO |   client 16 - samples 2250 - loss 1.7966
+2025-10-21 21:17:26,486 | INFO |   client 3 - samples 2250 - loss 1.7640
+2025-10-21 21:17:42,059 | INFO |   client 7 - samples 2250 - loss 1.7098
+2025-10-21 21:17:57,179 | INFO |   client 13 - samples 2250 - loss 1.7140
+2025-10-21 21:18:15,311 | INFO |   client 18 - samples 2250 - loss 1.7505
+2025-10-21 21:18:32,539 | INFO |   client 4 - samples 2250 - loss 1.6955
+2025-10-21 21:18:49,958 | INFO |   client 11 - samples 2250 - loss 1.7554
+2025-10-21 21:19:09,188 | INFO |   client 10 - samples 2250 - loss 1.7905
+2025-10-21 21:19:26,793 | INFO |   client 5 - samples 2250 - loss 1.7761
+2025-10-21 21:19:26,836 | INFO | Round 27 completed in 170.0s
+2025-10-21 21:19:26,837 | INFO | Round 28/100 - selected clients: [1, 3, 5, 2, 11, 17, 13, 12, 8, 6]
+2025-10-21 21:19:44,300 | INFO |   client 1 - samples 2250 - loss 1.7451
+2025-10-21 21:20:00,195 | INFO |   client 3 - samples 2250 - loss 1.7388
+2025-10-21 21:20:19,018 | INFO |   client 5 - samples 2250 - loss 1.7430
+2025-10-21 21:20:35,351 | INFO |   client 2 - samples 2250 - loss 1.7631
+2025-10-21 21:20:53,485 | INFO |   client 11 - samples 2250 - loss 1.7211
+2025-10-21 21:21:12,457 | INFO |   client 17 - samples 2250 - loss 1.7140
+2025-10-21 21:21:27,504 | INFO |   client 13 - samples 2250 - loss 1.6949
+2025-10-21 21:21:44,336 | INFO |   client 12 - samples 2250 - loss 1.7178
+2025-10-21 21:22:09,384 | INFO |   client 8 - samples 2250 - loss 1.7748
+2025-10-21 21:22:30,157 | INFO |   client 6 - samples 2250 - loss 1.7579
+2025-10-21 21:22:30,206 | INFO | Round 28 completed in 183.4s
+2025-10-21 21:22:30,206 | INFO | Round 29/100 - selected clients: [3, 9, 14, 17, 4, 5, 1, 2, 10, 11]
+2025-10-21 21:22:47,696 | INFO |   client 3 - samples 2250 - loss 1.7144
+2025-10-21 21:23:06,773 | INFO |   client 9 - samples 2250 - loss 1.7436
+2025-10-21 21:23:22,565 | INFO |   client 14 - samples 2250 - loss 1.7307
+2025-10-21 21:23:39,324 | INFO |   client 17 - samples 2250 - loss 1.6911
+2025-10-21 21:23:55,227 | INFO |   client 4 - samples 2250 - loss 1.6872
+2025-10-21 21:24:16,010 | INFO |   client 5 - samples 2250 - loss 1.7256
+2025-10-21 21:24:31,045 | INFO |   client 1 - samples 2250 - loss 1.7263
+2025-10-21 21:24:49,240 | INFO |   client 2 - samples 2250 - loss 1.7404
+2025-10-21 21:25:05,684 | INFO |   client 10 - samples 2250 - loss 1.7624
+2025-10-21 21:25:24,185 | INFO |   client 11 - samples 2250 - loss 1.7110
+2025-10-21 21:25:24,222 | INFO | Round 29 completed in 174.0s
+2025-10-21 21:25:24,222 | INFO | Round 30/100 - selected clients: [10, 16, 0, 8, 4, 13, 12, 3, 15, 1]
+2025-10-21 21:25:39,236 | INFO |   client 10 - samples 2250 - loss 1.7330
+2025-10-21 21:25:57,009 | INFO |   client 16 - samples 2250 - loss 1.7632
+2025-10-21 21:26:14,202 | INFO |   client 0 - samples 2250 - loss 1.7708
+2025-10-21 21:26:31,083 | INFO |   client 8 - samples 2250 - loss 1.7448
+2025-10-21 21:26:48,636 | INFO |   client 4 - samples 2250 - loss 1.6575
+2025-10-21 21:27:04,027 | INFO |   client 13 - samples 2250 - loss 1.6779
+2025-10-21 21:27:19,632 | INFO |   client 12 - samples 2250 - loss 1.6934
+2025-10-21 21:27:38,097 | INFO |   client 3 - samples 2250 - loss 1.7020
+2025-10-21 21:27:55,336 | INFO |   client 15 - samples 2250 - loss 1.7064
+2025-10-21 21:28:11,037 | INFO |   client 1 - samples 2250 - loss 1.7039
+2025-10-21 21:28:11,080 | INFO | Round 30 completed in 166.9s
+2025-10-21 21:28:11,081 | INFO | Round 31/100 - selected clients: [2, 5, 11, 17, 9, 16, 14, 10, 15, 19]
+2025-10-21 21:28:29,211 | INFO |   client 2 - samples 2250 - loss 1.7163
+2025-10-21 21:28:47,310 | INFO |   client 5 - samples 2250 - loss 1.7059
+2025-10-21 21:29:03,365 | INFO |   client 11 - samples 2250 - loss 1.6897
+2025-10-21 21:29:19,647 | INFO |   client 17 - samples 2250 - loss 1.6645
+2025-10-21 21:29:35,993 | INFO |   client 9 - samples 2250 - loss 1.7197
+2025-10-21 21:29:52,098 | INFO |   client 16 - samples 2250 - loss 1.7383
+2025-10-21 21:30:08,315 | INFO |   client 14 - samples 2250 - loss 1.7109
+2025-10-21 21:30:24,969 | INFO |   client 10 - samples 2250 - loss 1.7032
+2025-10-21 21:30:40,914 | INFO |   client 15 - samples 2250 - loss 1.6880
+2025-10-21 21:30:57,871 | INFO |   client 19 - samples 2250 - loss 1.7557
+2025-10-21 21:30:57,908 | INFO | Round 31 completed in 166.8s
+2025-10-21 21:30:57,908 | INFO | Round 32/100 - selected clients: [8, 3, 16, 15, 5, 7, 4, 9, 1, 14]
+2025-10-21 21:31:13,978 | INFO |   client 8 - samples 2250 - loss 1.7146
+2025-10-21 21:31:28,730 | INFO |   client 3 - samples 2250 - loss 1.6833
+2025-10-21 21:31:45,434 | INFO |   client 16 - samples 2250 - loss 1.7070
+2025-10-21 21:32:02,902 | INFO |   client 15 - samples 2250 - loss 1.6590
+2025-10-21 21:32:18,827 | INFO |   client 5 - samples 2250 - loss 1.6785
+2025-10-21 21:32:36,545 | INFO |   client 7 - samples 2250 - loss 1.6895
+2025-10-21 21:32:52,074 | INFO |   client 4 - samples 2250 - loss 1.6420
+2025-10-21 21:33:08,345 | INFO |   client 9 - samples 2250 - loss 1.6992
+2025-10-21 21:33:26,343 | INFO |   client 1 - samples 2250 - loss 1.6862
+2025-10-21 21:33:42,997 | INFO |   client 14 - samples 2250 - loss 1.6842
+2025-10-21 21:33:43,037 | INFO | Round 32 completed in 165.1s
+2025-10-21 21:33:43,037 | INFO | Round 33/100 - selected clients: [19, 16, 3, 10, 17, 12, 4, 2, 15, 5]
+2025-10-21 21:33:59,553 | INFO |   client 19 - samples 2250 - loss 1.7309
+2025-10-21 21:34:18,790 | INFO |   client 16 - samples 2250 - loss 1.6758
+2025-10-21 21:34:36,870 | INFO |   client 3 - samples 2250 - loss 1.6527
+2025-10-21 21:34:52,354 | INFO |   client 10 - samples 2250 - loss 1.6969
+2025-10-21 21:35:09,161 | INFO |   client 17 - samples 2250 - loss 1.6468
+2025-10-21 21:35:25,286 | INFO |   client 12 - samples 2250 - loss 1.6596
+2025-10-21 21:35:41,128 | INFO |   client 4 - samples 2250 - loss 1.6216
+2025-10-21 21:35:57,148 | INFO |   client 2 - samples 2250 - loss 1.6877
+2025-10-21 21:36:12,344 | INFO |   client 15 - samples 2250 - loss 1.6367
+2025-10-21 21:36:28,360 | INFO |   client 5 - samples 2250 - loss 1.6593
+2025-10-21 21:36:28,402 | INFO | Round 33 completed in 165.4s
+2025-10-21 21:36:28,403 | INFO | Round 34/100 - selected clients: [14, 18, 13, 19, 1, 11, 12, 8, 10, 16]
+2025-10-21 21:36:45,885 | INFO |   client 14 - samples 2250 - loss 1.6763
+2025-10-21 21:37:04,457 | INFO |   client 18 - samples 2250 - loss 1.7187
+2025-10-21 21:37:20,847 | INFO |   client 13 - samples 2250 - loss 1.6629
+2025-10-21 21:37:38,456 | INFO |   client 19 - samples 2250 - loss 1.7088
+2025-10-21 21:37:53,794 | INFO |   client 1 - samples 2250 - loss 1.6686
+2025-10-21 21:38:09,379 | INFO |   client 11 - samples 2250 - loss 1.6846
+2025-10-21 21:38:25,574 | INFO |   client 12 - samples 2250 - loss 1.6397
+2025-10-21 21:38:41,956 | INFO |   client 8 - samples 2250 - loss 1.7038
+2025-10-21 21:38:58,830 | INFO |   client 10 - samples 2250 - loss 1.6665
+2025-10-21 21:39:15,908 | INFO |   client 16 - samples 2250 - loss 1.6637
+2025-10-21 21:39:15,945 | INFO | Round 34 completed in 167.5s
+2025-10-21 21:39:15,945 | INFO | Round 35/100 - selected clients: [11, 14, 12, 6, 9, 0, 16, 3, 4, 19]
+2025-10-21 21:39:31,374 | INFO |   client 11 - samples 2250 - loss 1.6493
+2025-10-21 21:39:46,913 | INFO |   client 14 - samples 2250 - loss 1.6461
+2025-10-21 21:40:04,081 | INFO |   client 12 - samples 2250 - loss 1.6076
+2025-10-21 21:40:22,220 | INFO |   client 6 - samples 2250 - loss 1.7305
+2025-10-21 21:40:39,090 | INFO |   client 9 - samples 2250 - loss 1.6860
+2025-10-21 21:40:55,657 | INFO |   client 0 - samples 2250 - loss 1.7381
+2025-10-21 21:41:12,845 | INFO |   client 16 - samples 2250 - loss 1.6471
+2025-10-21 21:41:29,059 | INFO |   client 3 - samples 2250 - loss 1.6403
+2025-10-21 21:41:44,112 | INFO |   client 4 - samples 2250 - loss 1.6041
+2025-10-21 21:41:59,874 | INFO |   client 19 - samples 2250 - loss 1.6742
+2025-10-21 21:41:59,912 | INFO | Round 35 completed in 164.0s
+2025-10-21 21:41:59,913 | INFO | Round 36/100 - selected clients: [8, 10, 6, 7, 17, 13, 1, 4, 16, 19]
+2025-10-21 21:42:16,032 | INFO |   client 8 - samples 2250 - loss 1.6777
+2025-10-21 21:42:32,878 | INFO |   client 10 - samples 2250 - loss 1.6399
+2025-10-21 21:42:51,685 | INFO |   client 6 - samples 2250 - loss 1.7019
+2025-10-21 21:43:13,957 | INFO |   client 7 - samples 2250 - loss 1.6661
+2025-10-21 21:43:29,455 | INFO |   client 17 - samples 2250 - loss 1.6219
+2025-10-21 21:43:46,558 | INFO |   client 13 - samples 2250 - loss 1.6440
+2025-10-21 21:44:02,814 | INFO |   client 1 - samples 2250 - loss 1.6523
+2025-10-21 21:44:17,287 | INFO |   client 4 - samples 2250 - loss 1.5809
+2025-10-21 21:44:33,259 | INFO |   client 16 - samples 2250 - loss 1.6289
+2025-10-21 21:44:49,069 | INFO |   client 19 - samples 2250 - loss 1.6550
+2025-10-21 21:44:49,107 | INFO | Round 36 completed in 169.2s
+2025-10-21 21:44:49,108 | INFO | Round 37/100 - selected clients: [6, 3, 9, 8, 13, 14, 0, 10, 2, 12]
+2025-10-21 21:45:04,913 | INFO |   client 6 - samples 2250 - loss 1.6772
+2025-10-21 21:45:25,312 | INFO |   client 3 - samples 2250 - loss 1.6311
+2025-10-21 21:45:42,415 | INFO |   client 9 - samples 2250 - loss 1.6630
+2025-10-21 21:45:58,353 | INFO |   client 8 - samples 2250 - loss 1.6475
+2025-10-21 21:46:14,046 | INFO |   client 13 - samples 2250 - loss 1.6165
+2025-10-21 21:46:29,241 | INFO |   client 14 - samples 2250 - loss 1.6360
+2025-10-21 21:46:46,021 | INFO |   client 0 - samples 2250 - loss 1.7087
+2025-10-21 21:47:03,516 | INFO |   client 10 - samples 2250 - loss 1.6137
+2025-10-21 21:47:18,669 | INFO |   client 2 - samples 2250 - loss 1.6770
+2025-10-21 21:47:33,382 | INFO |   client 12 - samples 2250 - loss 1.5979
+2025-10-21 21:47:33,420 | INFO | Round 37 completed in 164.3s
+2025-10-21 21:47:33,421 | INFO | Round 38/100 - selected clients: [4, 14, 11, 5, 7, 3, 17, 13, 15, 2]
+2025-10-21 21:47:51,725 | INFO |   client 4 - samples 2250 - loss 1.5689
+2025-10-21 21:48:11,098 | INFO |   client 14 - samples 2250 - loss 1.6125
+2025-10-21 21:48:27,814 | INFO |   client 11 - samples 2250 - loss 1.6465
+2025-10-21 21:48:44,655 | INFO |   client 5 - samples 2250 - loss 1.6609
+2025-10-21 21:49:07,151 | INFO |   client 7 - samples 2250 - loss 1.6399
+2025-10-21 21:49:23,394 | INFO |   client 3 - samples 2250 - loss 1.6082
+2025-10-21 21:49:39,956 | INFO |   client 17 - samples 2250 - loss 1.6042
+2025-10-21 21:49:58,903 | INFO |   client 13 - samples 2250 - loss 1.5896
+2025-10-21 21:50:14,740 | INFO |   client 15 - samples 2250 - loss 1.6495
+2025-10-21 21:50:30,603 | INFO |   client 2 - samples 2250 - loss 1.6397
+2025-10-21 21:50:30,641 | INFO | Round 38 completed in 177.2s
+2025-10-21 21:50:30,641 | INFO | Round 39/100 - selected clients: [8, 12, 17, 13, 11, 5, 19, 6, 14, 0]
+2025-10-21 21:50:48,162 | INFO |   client 8 - samples 2250 - loss 1.6203
+2025-10-21 21:51:04,894 | INFO |   client 12 - samples 2250 - loss 1.5802
+2025-10-21 21:51:20,410 | INFO |   client 17 - samples 2250 - loss 1.5777
+2025-10-21 21:51:36,491 | INFO |   client 13 - samples 2250 - loss 1.5675
+2025-10-21 21:51:52,849 | INFO |   client 11 - samples 2250 - loss 1.6102
+2025-10-21 21:52:07,589 | INFO |   client 5 - samples 2250 - loss 1.6284
+2025-10-21 21:52:25,123 | INFO |   client 19 - samples 2250 - loss 1.6439
+2025-10-21 21:52:40,810 | INFO |   client 6 - samples 2250 - loss 1.6624
+2025-10-21 21:52:58,415 | INFO |   client 14 - samples 2250 - loss 1.5867
+2025-10-21 21:53:17,114 | INFO |   client 0 - samples 2250 - loss 1.6851
+2025-10-21 21:53:17,150 | INFO | Round 39 completed in 166.5s
+2025-10-21 21:53:17,150 | INFO | Round 40/100 - selected clients: [16, 14, 10, 12, 15, 13, 0, 2, 19, 7]
+2025-10-21 21:53:35,130 | INFO |   client 16 - samples 2250 - loss 1.6255
+2025-10-21 21:53:51,199 | INFO |   client 14 - samples 2250 - loss 1.5595
+2025-10-21 21:54:06,792 | INFO |   client 10 - samples 2250 - loss 1.6069
+2025-10-21 21:54:23,002 | INFO |   client 12 - samples 2250 - loss 1.5461
+2025-10-21 21:54:40,749 | INFO |   client 15 - samples 2250 - loss 1.6233
+2025-10-21 21:54:57,553 | INFO |   client 13 - samples 2250 - loss 1.5295
+2025-10-21 21:55:13,914 | INFO |   client 0 - samples 2250 - loss 1.6466
+2025-10-21 21:55:30,217 | INFO |   client 2 - samples 2250 - loss 1.6258
+2025-10-21 21:55:46,826 | INFO |   client 19 - samples 2250 - loss 1.6110
+2025-10-21 21:56:03,007 | INFO |   client 7 - samples 2250 - loss 1.6270
+2025-10-21 21:56:03,059 | INFO | Round 40 completed in 165.9s
+2025-10-21 21:56:03,060 | INFO | Round 41/100 - selected clients: [4, 15, 16, 9, 5, 12, 2, 10, 19, 13]
+2025-10-21 21:56:20,376 | INFO |   client 4 - samples 2250 - loss 1.5514
+2025-10-21 21:56:38,014 | INFO |   client 15 - samples 2250 - loss 1.5840
+2025-10-21 21:56:53,671 | INFO |   client 16 - samples 2250 - loss 1.5802
+2025-10-21 21:57:08,693 | INFO |   client 9 - samples 2250 - loss 1.6569
+2025-10-21 21:57:24,520 | INFO |   client 5 - samples 2250 - loss 1.6183
+2025-10-21 21:57:41,196 | INFO |   client 12 - samples 2250 - loss 1.5245
+2025-10-21 21:57:57,790 | INFO |   client 2 - samples 2250 - loss 1.5933
+2025-10-21 21:58:13,890 | INFO |   client 10 - samples 2250 - loss 1.5710
+2025-10-21 21:58:33,197 | INFO |   client 19 - samples 2250 - loss 1.5816
+2025-10-21 21:58:49,077 | INFO |   client 13 - samples 2250 - loss 1.5227
+2025-10-21 21:58:49,113 | INFO | Round 41 completed in 166.1s
+2025-10-21 21:58:49,113 | INFO | Round 42/100 - selected clients: [15, 14, 2, 4, 12, 0, 18, 10, 3, 11]
+2025-10-21 21:59:05,057 | INFO |   client 15 - samples 2250 - loss 1.5627
+2025-10-21 21:59:21,260 | INFO |   client 14 - samples 2250 - loss 1.5573
+2025-10-21 21:59:37,660 | INFO |   client 2 - samples 2250 - loss 1.5705
+2025-10-21 21:59:53,611 | INFO |   client 4 - samples 2250 - loss 1.5099
+2025-10-21 22:00:08,627 | INFO |   client 12 - samples 2250 - loss 1.4980
+2025-10-21 22:00:25,074 | INFO |   client 0 - samples 2250 - loss 1.6355
+2025-10-21 22:00:40,761 | INFO |   client 18 - samples 2250 - loss 1.6947
+2025-10-21 22:00:56,162 | INFO |   client 10 - samples 2250 - loss 1.5517
+2025-10-21 22:01:13,070 | INFO |   client 3 - samples 2250 - loss 1.6024
+2025-10-21 22:01:28,528 | INFO |   client 11 - samples 2250 - loss 1.6158
+2025-10-21 22:01:28,568 | INFO | Round 42 completed in 159.5s
+2025-10-21 22:01:28,569 | INFO | Round 43/100 - selected clients: [9, 1, 15, 0, 10, 13, 3, 7, 12, 8]
+2025-10-21 22:01:45,300 | INFO |   client 9 - samples 2250 - loss 1.6456
+2025-10-21 22:02:01,979 | INFO |   client 1 - samples 2250 - loss 1.6530
+2025-10-21 22:02:16,991 | INFO |   client 15 - samples 2250 - loss 1.5388
+2025-10-21 22:02:33,882 | INFO |   client 0 - samples 2250 - loss 1.5934
+2025-10-21 22:02:48,754 | INFO |   client 10 - samples 2250 - loss 1.5245
+2025-10-21 22:03:06,133 | INFO |   client 13 - samples 2250 - loss 1.5208
+2025-10-21 22:03:22,165 | INFO |   client 3 - samples 2250 - loss 1.5752
+2025-10-21 22:03:40,546 | INFO |   client 7 - samples 2250 - loss 1.6058
+2025-10-21 22:03:58,097 | INFO |   client 12 - samples 2250 - loss 1.4777
+2025-10-21 22:04:13,837 | INFO |   client 8 - samples 2250 - loss 1.6280
+2025-10-21 22:04:13,877 | INFO | Round 43 completed in 165.3s
+2025-10-21 22:04:13,877 | INFO | Round 44/100 - selected clients: [6, 3, 10, 19, 7, 15, 12, 13, 5, 9]
+2025-10-21 22:04:31,120 | INFO |   client 6 - samples 2250 - loss 1.6652
+2025-10-21 22:04:49,258 | INFO |   client 3 - samples 2250 - loss 1.5549
+2025-10-21 22:05:07,644 | INFO |   client 10 - samples 2250 - loss 1.4970
+2025-10-21 22:05:24,472 | INFO |   client 19 - samples 2250 - loss 1.5870
+2025-10-21 22:05:38,848 | INFO |   client 7 - samples 2250 - loss 1.5673
+2025-10-21 22:05:55,056 | INFO |   client 15 - samples 2250 - loss 1.5059
+2025-10-21 22:06:11,792 | INFO |   client 12 - samples 2250 - loss 1.4415
+2025-10-21 22:06:28,092 | INFO |   client 13 - samples 2250 - loss 1.4814
+2025-10-21 22:06:44,880 | INFO |   client 5 - samples 2250 - loss 1.6188
+2025-10-21 22:07:01,401 | INFO |   client 9 - samples 2250 - loss 1.5916
+2025-10-21 22:07:01,440 | INFO | Round 44 completed in 167.6s
+2025-10-21 22:07:01,440 | INFO | Round 45/100 - selected clients: [0, 17, 10, 19, 2, 11, 8, 14, 18, 4]
+2025-10-21 22:07:17,888 | INFO |   client 0 - samples 2250 - loss 1.5907
+2025-10-21 22:07:34,684 | INFO |   client 17 - samples 2250 - loss 1.6077
+2025-10-21 22:07:52,232 | INFO |   client 10 - samples 2250 - loss 1.4722
+2025-10-21 22:08:08,899 | INFO |   client 19 - samples 2250 - loss 1.5476
+2025-10-21 22:08:28,796 | INFO |   client 2 - samples 2250 - loss 1.5677
+2025-10-21 22:08:45,024 | INFO |   client 11 - samples 2250 - loss 1.5984
+2025-10-21 22:09:00,191 | INFO |   client 8 - samples 2250 - loss 1.6037
+2025-10-21 22:09:18,099 | INFO |   client 14 - samples 2250 - loss 1.5506
+2025-10-21 22:09:34,298 | INFO |   client 18 - samples 2250 - loss 1.6614
+2025-10-21 22:09:50,737 | INFO |   client 4 - samples 2250 - loss 1.5236
+2025-10-21 22:09:50,775 | INFO | Round 45 completed in 169.3s
+2025-10-21 22:09:50,775 | INFO | Round 46/100 - selected clients: [4, 6, 17, 3, 8, 12, 5, 10, 15, 13]
+2025-10-21 22:10:09,697 | INFO |   client 4 - samples 2250 - loss 1.4883
+2025-10-21 22:10:26,450 | INFO |   client 6 - samples 2250 - loss 1.6421
+2025-10-21 22:10:42,831 | INFO |   client 17 - samples 2250 - loss 1.5613
+2025-10-21 22:10:57,745 | INFO |   client 3 - samples 2250 - loss 1.5337
+2025-10-21 22:11:15,613 | INFO |   client 8 - samples 2250 - loss 1.5584
+2025-10-21 22:11:32,847 | INFO |   client 12 - samples 2250 - loss 1.4635
+2025-10-21 22:11:51,591 | INFO |   client 5 - samples 2250 - loss 1.5974
+2025-10-21 22:12:08,934 | INFO |   client 10 - samples 2250 - loss 1.4537
+2025-10-21 22:12:25,288 | INFO |   client 15 - samples 2250 - loss 1.4992
+2025-10-21 22:12:41,230 | INFO |   client 13 - samples 2250 - loss 1.4854
+2025-10-21 22:12:41,271 | INFO | Round 46 completed in 170.5s
+2025-10-21 22:12:41,271 | INFO | Round 47/100 - selected clients: [12, 6, 10, 5, 0, 8, 19, 11, 15, 16]
+2025-10-21 22:12:57,418 | INFO |   client 12 - samples 2250 - loss 1.4395
+2025-10-21 22:13:14,496 | INFO |   client 6 - samples 2250 - loss 1.6042
+2025-10-21 22:13:31,997 | INFO |   client 10 - samples 2250 - loss 1.4163
+2025-10-21 22:13:50,443 | INFO |   client 5 - samples 2250 - loss 1.5638
+2025-10-21 22:14:06,584 | INFO |   client 0 - samples 2250 - loss 1.5805
+2025-10-21 22:14:25,159 | INFO |   client 8 - samples 2250 - loss 1.5383
+2025-10-21 22:14:41,933 | INFO |   client 19 - samples 2250 - loss 1.5469
+2025-10-21 22:14:58,716 | INFO |   client 11 - samples 2250 - loss 1.5870
+2025-10-21 22:15:15,466 | INFO |   client 15 - samples 2250 - loss 1.4687
+2025-10-21 22:15:32,636 | INFO |   client 16 - samples 2250 - loss 1.6267
+2025-10-21 22:15:32,672 | INFO | Round 47 completed in 171.4s
+2025-10-21 22:15:32,672 | INFO | Round 48/100 - selected clients: [2, 8, 4, 11, 19, 15, 13, 6, 5, 3]
+2025-10-21 22:15:51,217 | INFO |   client 2 - samples 2250 - loss 1.5580
+2025-10-21 22:16:07,312 | INFO |   client 8 - samples 2250 - loss 1.5033
+2025-10-21 22:16:22,668 | INFO |   client 4 - samples 2250 - loss 1.4870
+2025-10-21 22:16:40,610 | INFO |   client 11 - samples 2250 - loss 1.5544
+2025-10-21 22:16:55,859 | INFO |   client 19 - samples 2250 - loss 1.4974
+2025-10-21 22:17:14,725 | INFO |   client 15 - samples 2250 - loss 1.4385
+2025-10-21 22:17:30,692 | INFO |   client 13 - samples 2250 - loss 1.4754
+2025-10-21 22:17:49,637 | INFO |   client 6 - samples 2250 - loss 1.5726
+2025-10-21 22:18:07,537 | INFO |   client 5 - samples 2250 - loss 1.5230
+2025-10-21 22:18:23,069 | INFO |   client 3 - samples 2250 - loss 1.5264
+2025-10-21 22:18:23,112 | INFO | Round 48 completed in 170.4s
+2025-10-21 22:18:23,112 | INFO | Round 49/100 - selected clients: [6, 2, 15, 9, 11, 12, 7, 16, 4, 17]
+2025-10-21 22:18:40,289 | INFO |   client 6 - samples 2250 - loss 1.5281
+2025-10-21 22:18:56,190 | INFO |   client 2 - samples 2250 - loss 1.5278
+2025-10-21 22:19:12,342 | INFO |   client 15 - samples 2250 - loss 1.4272
+2025-10-21 22:19:27,485 | INFO |   client 9 - samples 2250 - loss 1.6156
+2025-10-21 22:19:45,151 | INFO |   client 11 - samples 2250 - loss 1.5256
+2025-10-21 22:20:02,655 | INFO |   client 12 - samples 2250 - loss 1.4285
+2025-10-21 22:20:19,253 | INFO |   client 7 - samples 2250 - loss 1.5917
+2025-10-21 22:20:35,714 | INFO |   client 16 - samples 2250 - loss 1.5994
+2025-10-21 22:20:52,044 | INFO |   client 4 - samples 2250 - loss 1.4314
+2025-10-21 22:21:08,185 | INFO |   client 17 - samples 2250 - loss 1.5863
+2025-10-21 22:21:08,222 | INFO | Round 49 completed in 165.1s
+2025-10-21 22:21:08,223 | INFO | Round 50/100 - selected clients: [2, 18, 5, 17, 12, 7, 13, 15, 11, 14]
+2025-10-21 22:21:25,575 | INFO |   client 2 - samples 2250 - loss 1.4633
+2025-10-21 22:21:47,016 | INFO |   client 18 - samples 2250 - loss 1.6346
+2025-10-21 22:22:03,850 | INFO |   client 5 - samples 2250 - loss 1.5359
+2025-10-21 22:22:19,670 | INFO |   client 17 - samples 2250 - loss 1.5408
+2025-10-21 22:22:36,548 | INFO |   client 12 - samples 2250 - loss 1.4095
+2025-10-21 22:22:53,603 | INFO |   client 7 - samples 2250 - loss 1.5414
+2025-10-21 22:23:09,925 | INFO |   client 13 - samples 2250 - loss 1.4630
+2025-10-21 22:23:25,178 | INFO |   client 15 - samples 2250 - loss 1.4000
+2025-10-21 22:23:43,135 | INFO |   client 11 - samples 2250 - loss 1.4924
+2025-10-21 22:24:00,209 | INFO |   client 14 - samples 2250 - loss 1.5670
+2025-10-21 22:24:00,251 | INFO | Round 50 completed in 172.0s
+2025-10-21 22:24:00,252 | INFO | Round 51/100 - selected clients: [13, 16, 17, 8, 3, 9, 18, 7, 2, 1]
+2025-10-21 22:24:12,640 | INFO |   client 13 - samples 2250 - loss 1.4193
+2025-10-21 22:24:33,473 | INFO |   client 16 - samples 2250 - loss 1.5666
+2025-10-21 22:24:50,374 | INFO |   client 17 - samples 2250 - loss 1.5211
+2025-10-21 22:25:08,188 | INFO |   client 8 - samples 2250 - loss 1.5257
+2025-10-21 22:25:27,003 | INFO |   client 3 - samples 2250 - loss 1.5431
+2025-10-21 22:25:42,768 | INFO |   client 9 - samples 2250 - loss 1.6074
+2025-10-21 22:25:59,760 | INFO |   client 18 - samples 2250 - loss 1.6077
+2025-10-21 22:26:16,671 | INFO |   client 7 - samples 2250 - loss 1.5071
+2025-10-21 22:26:31,769 | INFO |   client 2 - samples 2250 - loss 1.4387
+2025-10-21 22:26:46,645 | INFO |   client 1 - samples 2250 - loss 1.6783
+2025-10-21 22:26:46,684 | INFO | Round 51 completed in 166.4s
+2025-10-21 22:26:46,684 | INFO | Round 52/100 - selected clients: [15, 18, 11, 3, 2, 5, 19, 13, 6, 1]
+2025-10-21 22:27:03,790 | INFO |   client 15 - samples 2250 - loss 1.4069
+2025-10-21 22:27:23,948 | INFO |   client 18 - samples 2250 - loss 1.5377
+2025-10-21 22:27:39,186 | INFO |   client 11 - samples 2250 - loss 1.4782
+2025-10-21 22:27:57,279 | INFO |   client 3 - samples 2250 - loss 1.5172
+2025-10-21 22:28:16,165 | INFO |   client 2 - samples 2250 - loss 1.4240
+2025-10-21 22:28:33,206 | INFO |   client 5 - samples 2250 - loss 1.5204
+2025-10-21 22:28:48,689 | INFO |   client 19 - samples 2250 - loss 1.5306
+2025-10-21 22:29:03,929 | INFO |   client 13 - samples 2250 - loss 1.3923
+2025-10-21 22:29:24,768 | INFO |   client 6 - samples 2250 - loss 1.5364
+2025-10-21 22:29:40,560 | INFO |   client 1 - samples 2250 - loss 1.6134
+2025-10-21 22:29:40,597 | INFO | Round 52 completed in 173.9s
+2025-10-21 22:29:40,598 | INFO | Round 53/100 - selected clients: [17, 5, 3, 8, 9, 6, 13, 0, 10, 7]
+2025-10-21 22:29:57,448 | INFO |   client 17 - samples 2250 - loss 1.5017
+2025-10-21 22:30:15,409 | INFO |   client 5 - samples 2250 - loss 1.4736
+2025-10-21 22:30:33,646 | INFO |   client 3 - samples 2250 - loss 1.4610
+2025-10-21 22:30:48,645 | INFO |   client 8 - samples 2250 - loss 1.4973
+2025-10-21 22:31:06,047 | INFO |   client 9 - samples 2250 - loss 1.5849
+2025-10-21 22:31:24,141 | INFO |   client 6 - samples 2250 - loss 1.5048
+2025-10-21 22:31:41,360 | INFO |   client 13 - samples 2250 - loss 1.3636
+2025-10-21 22:31:58,651 | INFO |   client 0 - samples 2250 - loss 1.6055
+2025-10-21 22:32:17,395 | INFO |   client 10 - samples 2250 - loss 1.4981
+2025-10-21 22:32:34,205 | INFO |   client 7 - samples 2250 - loss 1.4912
+2025-10-21 22:32:34,241 | INFO | Round 53 completed in 173.6s
+2025-10-21 22:32:34,241 | INFO | Round 54/100 - selected clients: [17, 16, 19, 4, 15, 0, 2, 12, 14, 9]
+2025-10-21 22:32:49,587 | INFO |   client 17 - samples 2250 - loss 1.4695
+2025-10-21 22:33:05,962 | INFO |   client 16 - samples 2250 - loss 1.5770
+2025-10-21 22:33:22,096 | INFO |   client 19 - samples 2250 - loss 1.5181
+2025-10-21 22:33:37,560 | INFO |   client 4 - samples 2250 - loss 1.4839
+2025-10-21 22:33:53,607 | INFO |   client 15 - samples 2250 - loss 1.3997
+2025-10-21 22:34:10,599 | INFO |   client 0 - samples 2250 - loss 1.5507
+2025-10-21 22:34:25,800 | INFO |   client 2 - samples 2250 - loss 1.4189
+2025-10-21 22:34:43,267 | INFO |   client 12 - samples 2250 - loss 1.4470
+2025-10-21 22:35:00,725 | INFO |   client 14 - samples 2250 - loss 1.5643
+2025-10-21 22:35:16,652 | INFO |   client 9 - samples 2250 - loss 1.5140
+2025-10-21 22:35:16,795 | INFO | Round 54 completed in 162.6s
+2025-10-21 22:35:16,795 | INFO | Round 55/100 - selected clients: [11, 10, 12, 6, 3, 13, 5, 17, 0, 19]
+2025-10-21 22:35:33,691 | INFO |   client 11 - samples 2250 - loss 1.4895
+2025-10-21 22:35:52,905 | INFO |   client 10 - samples 2250 - loss 1.4778
+2025-10-21 22:36:09,339 | INFO |   client 12 - samples 2250 - loss 1.4104
+2025-10-21 22:36:25,633 | INFO |   client 6 - samples 2250 - loss 1.4978
+2025-10-21 22:36:40,247 | INFO |   client 3 - samples 2250 - loss 1.4565
+2025-10-21 22:36:55,048 | INFO |   client 13 - samples 2250 - loss 1.3901
+2025-10-21 22:37:09,973 | INFO |   client 5 - samples 2250 - loss 1.4738
+2025-10-21 22:37:28,269 | INFO |   client 17 - samples 2250 - loss 1.4497
+2025-10-21 22:37:42,928 | INFO |   client 0 - samples 2250 - loss 1.5233
+2025-10-21 22:38:01,908 | INFO |   client 19 - samples 2250 - loss 1.4721
+2025-10-21 22:38:01,944 | INFO | Round 55 completed in 165.1s
+2025-10-21 22:38:01,944 | INFO | Round 56/100 - selected clients: [6, 13, 11, 1, 0, 8, 12, 15, 18, 4]
+2025-10-21 22:38:19,662 | INFO |   client 6 - samples 2250 - loss 1.4675
+2025-10-21 22:38:35,225 | INFO |   client 13 - samples 2250 - loss 1.3418
+2025-10-21 22:38:52,395 | INFO |   client 11 - samples 2250 - loss 1.4562
+2025-10-21 22:39:09,252 | INFO |   client 1 - samples 2250 - loss 1.6403
+2025-10-21 22:39:25,849 | INFO |   client 0 - samples 2250 - loss 1.4679
+2025-10-21 22:39:43,145 | INFO |   client 8 - samples 2250 - loss 1.4986
+2025-10-21 22:40:02,131 | INFO |   client 12 - samples 2250 - loss 1.3543
+2025-10-21 22:40:16,691 | INFO |   client 15 - samples 2250 - loss 1.4167
+2025-10-21 22:40:34,378 | INFO |   client 18 - samples 2250 - loss 1.5880
+2025-10-21 22:40:51,600 | INFO |   client 4 - samples 2250 - loss 1.4505
+2025-10-21 22:40:51,638 | INFO | Round 56 completed in 169.7s
+2025-10-21 22:40:51,638 | INFO | Round 57/100 - selected clients: [11, 18, 1, 19, 13, 0, 7, 4, 16, 10]
+2025-10-21 22:41:10,800 | INFO |   client 11 - samples 2250 - loss 1.4086
+2025-10-21 22:41:28,449 | INFO |   client 18 - samples 2250 - loss 1.5284
+2025-10-21 22:41:45,619 | INFO |   client 1 - samples 2250 - loss 1.5740
+2025-10-21 22:42:01,664 | INFO |   client 19 - samples 2250 - loss 1.4632
+2025-10-21 22:42:17,737 | INFO |   client 13 - samples 2250 - loss 1.3056
+2025-10-21 22:42:34,018 | INFO |   client 0 - samples 2250 - loss 1.4574
+2025-10-21 22:42:52,386 | INFO |   client 7 - samples 2250 - loss 1.5358
+2025-10-21 22:43:08,301 | INFO |   client 4 - samples 2250 - loss 1.4009
+2025-10-21 22:43:23,237 | INFO |   client 16 - samples 2250 - loss 1.5664
+2025-10-21 22:43:39,445 | INFO |   client 10 - samples 2250 - loss 1.4558
+2025-10-21 22:43:39,487 | INFO | Round 57 completed in 167.8s
+2025-10-21 22:43:39,487 | INFO | Round 58/100 - selected clients: [12, 19, 6, 5, 7, 3, 2, 18, 1, 4]
+2025-10-21 22:43:54,718 | INFO |   client 12 - samples 2250 - loss 1.3677
+2025-10-21 22:44:09,751 | INFO |   client 19 - samples 2250 - loss 1.3994
+2025-10-21 22:44:26,121 | INFO |   client 6 - samples 2250 - loss 1.4559
+2025-10-21 22:44:41,520 | INFO |   client 5 - samples 2250 - loss 1.4726
+2025-10-21 22:44:57,111 | INFO |   client 7 - samples 2250 - loss 1.4739
+2025-10-21 22:45:15,082 | INFO |   client 3 - samples 2250 - loss 1.4519
+2025-10-21 22:45:30,278 | INFO |   client 2 - samples 2250 - loss 1.4463
+2025-10-21 22:45:48,918 | INFO |   client 18 - samples 2250 - loss 1.4920
+2025-10-21 22:46:05,308 | INFO |   client 1 - samples 2250 - loss 1.5343
+2025-10-21 22:46:20,601 | INFO |   client 4 - samples 2250 - loss 1.3548
+2025-10-21 22:46:20,641 | INFO | Round 58 completed in 161.2s
+2025-10-21 22:46:20,641 | INFO | Round 59/100 - selected clients: [4, 14, 18, 5, 12, 11, 16, 6, 8, 1]
+2025-10-21 22:46:37,962 | INFO |   client 4 - samples 2250 - loss 1.3430
+2025-10-21 22:46:53,290 | INFO |   client 14 - samples 2250 - loss 1.5736
+2025-10-21 22:47:08,718 | INFO |   client 18 - samples 2250 - loss 1.4583
+2025-10-21 22:47:27,105 | INFO |   client 5 - samples 2250 - loss 1.4442
+2025-10-21 22:47:41,937 | INFO |   client 12 - samples 2250 - loss 1.3308
+2025-10-21 22:47:56,877 | INFO |   client 11 - samples 2250 - loss 1.4359
+2025-10-21 22:48:13,054 | INFO |   client 16 - samples 2250 - loss 1.5554
+2025-10-21 22:48:29,202 | INFO |   client 6 - samples 2250 - loss 1.4114
+2025-10-21 22:48:43,918 | INFO |   client 8 - samples 2250 - loss 1.5024
+2025-10-21 22:48:59,283 | INFO |   client 1 - samples 2250 - loss 1.5095
+2025-10-21 22:48:59,327 | INFO | Round 59 completed in 158.7s
+2025-10-21 22:48:59,327 | INFO | Round 60/100 - selected clients: [18, 6, 17, 11, 14, 0, 10, 8, 3, 9]
+2025-10-21 22:49:20,977 | INFO |   client 18 - samples 2250 - loss 1.4346
+2025-10-21 22:49:36,834 | INFO |   client 6 - samples 2250 - loss 1.3822
+2025-10-21 22:49:53,143 | INFO |   client 17 - samples 2250 - loss 1.5079
+2025-10-21 22:50:09,460 | INFO |   client 11 - samples 2250 - loss 1.3732
+2025-10-21 22:50:24,660 | INFO |   client 14 - samples 2250 - loss 1.5428
+2025-10-21 22:50:39,716 | INFO |   client 0 - samples 2250 - loss 1.4720
+2025-10-21 22:50:54,586 | INFO |   client 10 - samples 2250 - loss 1.4787
+2025-10-21 22:51:16,891 | INFO |   client 8 - samples 2250 - loss 1.4575
+2025-10-21 22:51:33,022 | INFO |   client 3 - samples 2250 - loss 1.4462
+2025-10-21 22:51:52,968 | INFO |   client 9 - samples 2250 - loss 1.5930
+2025-10-21 22:51:53,006 | INFO | Round 60 completed in 173.7s
+2025-10-21 22:51:53,006 | INFO | Round 61/100 - selected clients: [4, 11, 5, 17, 12, 19, 9, 6, 13, 18]
+2025-10-21 22:52:10,343 | INFO |   client 4 - samples 2250 - loss 1.3427
+2025-10-21 22:52:28,406 | INFO |   client 11 - samples 2250 - loss 1.3468
+2025-10-21 22:52:48,791 | INFO |   client 5 - samples 2250 - loss 1.4416
+2025-10-21 22:53:05,034 | INFO |   client 17 - samples 2250 - loss 1.4215
+2025-10-21 22:53:21,290 | INFO |   client 12 - samples 2250 - loss 1.3386
+2025-10-21 22:53:36,459 | INFO |   client 19 - samples 2250 - loss 1.4365
+2025-10-21 22:53:52,282 | INFO |   client 9 - samples 2250 - loss 1.5096
+2025-10-21 22:54:09,476 | INFO |   client 6 - samples 2250 - loss 1.3336
+2025-10-21 22:54:27,300 | INFO |   client 13 - samples 2250 - loss 1.3706
+2025-10-21 22:54:42,744 | INFO |   client 18 - samples 2250 - loss 1.3875
+2025-10-21 22:54:42,785 | INFO | Round 61 completed in 169.8s
+2025-10-21 22:54:42,786 | INFO | Round 62/100 - selected clients: [14, 6, 2, 3, 12, 7, 5, 10, 1, 19]
+2025-10-21 22:55:01,206 | INFO |   client 14 - samples 2250 - loss 1.5041
+2025-10-21 22:55:16,603 | INFO |   client 6 - samples 2250 - loss 1.3108
+2025-10-21 22:55:34,017 | INFO |   client 2 - samples 2250 - loss 1.4771
+2025-10-21 22:55:48,648 | INFO |   client 3 - samples 2250 - loss 1.4197
+2025-10-21 22:56:06,659 | INFO |   client 12 - samples 2250 - loss 1.2980
+2025-10-21 22:56:21,182 | INFO |   client 7 - samples 2250 - loss 1.5072
+2025-10-21 22:56:38,704 | INFO |   client 5 - samples 2250 - loss 1.3975
+2025-10-21 22:56:53,225 | INFO |   client 10 - samples 2250 - loss 1.4540
+2025-10-21 22:57:13,614 | INFO |   client 1 - samples 2250 - loss 1.5398
+2025-10-21 22:57:30,126 | INFO |   client 19 - samples 2250 - loss 1.3870
+2025-10-21 22:57:30,168 | INFO | Round 62 completed in 167.4s
+2025-10-21 22:57:30,169 | INFO | Round 63/100 - selected clients: [0, 6, 7, 12, 10, 19, 11, 2, 14, 16]
+2025-10-21 22:57:47,918 | INFO |   client 0 - samples 2250 - loss 1.4952
+2025-10-21 22:58:06,069 | INFO |   client 6 - samples 2250 - loss 1.2880
+2025-10-21 22:58:25,491 | INFO |   client 7 - samples 2250 - loss 1.4422
+2025-10-21 22:58:41,933 | INFO |   client 12 - samples 2250 - loss 1.2660
+2025-10-21 22:58:57,714 | INFO |   client 10 - samples 2250 - loss 1.3879
+2025-10-21 22:59:14,770 | INFO |   client 19 - samples 2250 - loss 1.3478
+2025-10-21 22:59:32,835 | INFO |   client 11 - samples 2250 - loss 1.3506
+2025-10-21 22:59:47,389 | INFO |   client 2 - samples 2250 - loss 1.4147
+2025-10-21 23:00:03,575 | INFO |   client 14 - samples 2250 - loss 1.4702
+2025-10-21 23:00:20,881 | INFO |   client 16 - samples 2250 - loss 1.5607
+2025-10-21 23:00:20,917 | INFO | Round 63 completed in 170.7s
+2025-10-21 23:00:20,918 | INFO | Round 64/100 - selected clients: [18, 11, 3, 0, 9, 8, 12, 15, 5, 4]
+2025-10-21 23:00:36,538 | INFO |   client 18 - samples 2250 - loss 1.4454
+2025-10-21 23:00:51,347 | INFO |   client 11 - samples 2250 - loss 1.2985
+2025-10-21 23:01:10,616 | INFO |   client 3 - samples 2250 - loss 1.4104
+2025-10-21 23:01:26,397 | INFO |   client 0 - samples 2250 - loss 1.4442
+2025-10-21 23:01:41,380 | INFO |   client 9 - samples 2250 - loss 1.5385
+2025-10-21 23:01:56,192 | INFO |   client 8 - samples 2250 - loss 1.5064
+2025-10-21 23:02:14,854 | INFO |   client 12 - samples 2250 - loss 1.2415
+2025-10-21 23:02:29,605 | INFO |   client 15 - samples 2250 - loss 1.5231
+2025-10-21 23:02:48,780 | INFO |   client 5 - samples 2250 - loss 1.4009
+2025-10-21 23:03:06,165 | INFO |   client 4 - samples 2250 - loss 1.3619
+2025-10-21 23:03:06,208 | INFO | Round 64 completed in 165.3s
+2025-10-21 23:03:06,208 | INFO | Round 65/100 - selected clients: [15, 0, 17, 16, 19, 18, 12, 4, 1, 3]
+2025-10-21 23:03:21,829 | INFO |   client 15 - samples 2250 - loss 1.4363
+2025-10-21 23:03:39,351 | INFO |   client 0 - samples 2250 - loss 1.3952
+2025-10-21 23:03:55,013 | INFO |   client 17 - samples 2250 - loss 1.5019
+2025-10-21 23:04:09,999 | INFO |   client 16 - samples 2250 - loss 1.5351
+2025-10-21 23:04:25,480 | INFO |   client 19 - samples 2250 - loss 1.3495
+2025-10-21 23:04:43,225 | INFO |   client 18 - samples 2250 - loss 1.3727
+2025-10-21 23:04:59,629 | INFO |   client 12 - samples 2250 - loss 1.2134
+2025-10-21 23:05:18,138 | INFO |   client 4 - samples 2250 - loss 1.3097
+2025-10-21 23:05:35,900 | INFO |   client 1 - samples 2250 - loss 1.5474
+2025-10-21 23:05:53,571 | INFO |   client 3 - samples 2250 - loss 1.3639
+2025-10-21 23:05:53,609 | INFO | Round 65 completed in 167.4s
+2025-10-21 23:05:53,609 | INFO | Round 66/100 - selected clients: [7, 18, 13, 15, 9, 2, 6, 8, 1, 4]
+2025-10-21 23:06:10,967 | INFO |   client 7 - samples 2250 - loss 1.4821
+2025-10-21 23:06:26,721 | INFO |   client 18 - samples 2250 - loss 1.3262
+2025-10-21 23:06:44,975 | INFO |   client 13 - samples 2250 - loss 1.4082
+2025-10-21 23:06:59,521 | INFO |   client 15 - samples 2250 - loss 1.3955
+2025-10-21 23:07:17,820 | INFO |   client 9 - samples 2250 - loss 1.5088
+2025-10-21 23:07:32,856 | INFO |   client 2 - samples 2250 - loss 1.4215
+2025-10-21 23:07:47,922 | INFO |   client 6 - samples 2250 - loss 1.3502
+2025-10-21 23:08:04,754 | INFO |   client 8 - samples 2250 - loss 1.4771
+2025-10-21 23:08:19,598 | INFO |   client 1 - samples 2250 - loss 1.4737
+2025-10-21 23:08:34,188 | INFO |   client 4 - samples 2250 - loss 1.2638
+2025-10-21 23:08:34,227 | INFO | Round 66 completed in 160.6s
+2025-10-21 23:08:34,228 | INFO | Round 67/100 - selected clients: [4, 2, 12, 8, 17, 3, 1, 19, 14, 18]
+2025-10-21 23:08:48,940 | INFO |   client 4 - samples 2250 - loss 1.2477
+2025-10-21 23:09:05,083 | INFO |   client 2 - samples 2250 - loss 1.3476
+2025-10-21 23:09:21,466 | INFO |   client 12 - samples 2250 - loss 1.2473
+2025-10-21 23:09:36,639 | INFO |   client 8 - samples 2250 - loss 1.3864
+2025-10-21 23:09:52,473 | INFO |   client 17 - samples 2250 - loss 1.4419
+2025-10-21 23:10:07,872 | INFO |   client 3 - samples 2250 - loss 1.3720
+2025-10-21 23:10:23,122 | INFO |   client 1 - samples 2250 - loss 1.4424
+2025-10-21 23:10:39,291 | INFO |   client 19 - samples 2250 - loss 1.3512
+2025-10-21 23:10:53,979 | INFO |   client 14 - samples 2250 - loss 1.5063
+2025-10-21 23:11:14,861 | INFO |   client 18 - samples 2250 - loss 1.2887
+2025-10-21 23:11:14,907 | INFO | Round 67 completed in 160.7s
+2025-10-21 23:11:14,908 | INFO | Round 68/100 - selected clients: [8, 7, 14, 17, 1, 15, 3, 19, 18, 4]
+2025-10-21 23:11:32,268 | INFO |   client 8 - samples 2250 - loss 1.3377
+2025-10-21 23:11:46,908 | INFO |   client 7 - samples 2250 - loss 1.4493
+2025-10-21 23:12:07,054 | INFO |   client 14 - samples 2250 - loss 1.4410
+2025-10-21 23:12:23,664 | INFO |   client 17 - samples 2250 - loss 1.4203
+2025-10-21 23:12:40,882 | INFO |   client 1 - samples 2250 - loss 1.4008
+2025-10-21 23:12:58,660 | INFO |   client 15 - samples 2250 - loss 1.3912
+2025-10-21 23:13:14,630 | INFO |   client 3 - samples 2250 - loss 1.3000
+2025-10-21 23:13:30,757 | INFO |   client 19 - samples 2250 - loss 1.2999
+2025-10-21 23:13:46,021 | INFO |   client 18 - samples 2250 - loss 1.2654
+2025-10-21 23:14:01,429 | INFO |   client 4 - samples 2250 - loss 1.1954
+2025-10-21 23:14:01,468 | INFO | Round 68 completed in 166.6s
+2025-10-21 23:14:01,469 | INFO | Round 69/100 - selected clients: [12, 7, 13, 15, 8, 10, 16, 11, 1, 17]
+2025-10-21 23:14:19,744 | INFO |   client 12 - samples 2250 - loss 1.2422
+2025-10-21 23:14:36,740 | INFO |   client 7 - samples 2250 - loss 1.3719
+2025-10-21 23:14:51,990 | INFO |   client 13 - samples 2250 - loss 1.4007
+2025-10-21 23:15:07,920 | INFO |   client 15 - samples 2250 - loss 1.3377
+2025-10-21 23:15:24,330 | INFO |   client 8 - samples 2250 - loss 1.3002
+2025-10-21 23:15:39,882 | INFO |   client 10 - samples 2250 - loss 1.4818
+2025-10-21 23:15:59,991 | INFO |   client 16 - samples 2250 - loss 1.5627
+2025-10-21 23:16:18,698 | INFO |   client 11 - samples 2250 - loss 1.4061
+2025-10-21 23:16:34,565 | INFO |   client 1 - samples 2250 - loss 1.3623
+2025-10-21 23:16:49,503 | INFO |   client 17 - samples 2250 - loss 1.3538
+2025-10-21 23:16:49,549 | INFO | Round 69 completed in 168.1s
+2025-10-21 23:16:49,550 | INFO | Round 70/100 - selected clients: [6, 10, 15, 19, 12, 16, 9, 17, 2, 18]
+2025-10-21 23:17:07,207 | INFO |   client 6 - samples 2250 - loss 1.3831
+2025-10-21 23:17:26,890 | INFO |   client 10 - samples 2250 - loss 1.3962
+2025-10-21 23:17:43,068 | INFO |   client 15 - samples 2250 - loss 1.2839
+2025-10-21 23:17:59,209 | INFO |   client 19 - samples 2250 - loss 1.3061
+2025-10-21 23:18:15,062 | INFO |   client 12 - samples 2250 - loss 1.1978
+2025-10-21 23:18:33,821 | INFO |   client 16 - samples 2250 - loss 1.4873
+2025-10-21 23:18:51,542 | INFO |   client 9 - samples 2250 - loss 1.5209
+2025-10-21 23:19:11,413 | INFO |   client 17 - samples 2250 - loss 1.3318
+2025-10-21 23:19:26,895 | INFO |   client 2 - samples 2250 - loss 1.3805
+2025-10-21 23:19:46,089 | INFO |   client 18 - samples 2250 - loss 1.2973
+2025-10-21 23:19:46,122 | INFO | Round 70 completed in 176.6s
+2025-10-21 23:19:46,123 | INFO | Round 71/100 - selected clients: [15, 18, 9, 14, 13, 12, 10, 2, 5, 3]
+2025-10-21 23:20:01,606 | INFO |   client 15 - samples 2250 - loss 1.2260
+2025-10-21 23:20:17,114 | INFO |   client 18 - samples 2250 - loss 1.2193
+2025-10-21 23:20:32,897 | INFO |   client 9 - samples 2250 - loss 1.4451
+2025-10-21 23:20:53,647 | INFO |   client 14 - samples 2250 - loss 1.4584
+2025-10-21 23:21:13,203 | INFO |   client 13 - samples 2250 - loss 1.3703
+2025-10-21 23:21:35,462 | INFO |   client 12 - samples 2250 - loss 1.1372
+2025-10-21 23:21:53,778 | INFO |   client 10 - samples 2250 - loss 1.3737
+2025-10-21 23:22:13,607 | INFO |   client 2 - samples 2250 - loss 1.3337
+2025-10-21 23:22:35,280 | INFO |   client 5 - samples 2250 - loss 1.4977
+2025-10-21 23:22:52,081 | INFO |   client 3 - samples 2250 - loss 1.3614
+2025-10-21 23:22:52,121 | INFO | Round 71 completed in 186.0s
+2025-10-21 23:22:52,121 | INFO | Round 72/100 - selected clients: [0, 8, 19, 15, 11, 3, 6, 17, 1, 4]
+2025-10-21 23:23:07,926 | INFO |   client 0 - samples 2250 - loss 1.4929
+2025-10-21 23:23:25,204 | INFO |   client 8 - samples 2250 - loss 1.3668
+2025-10-21 23:23:51,800 | INFO |   client 19 - samples 2250 - loss 1.2920
+2025-10-21 23:24:14,045 | INFO |   client 15 - samples 2250 - loss 1.2150
+2025-10-21 23:24:30,179 | INFO |   client 11 - samples 2250 - loss 1.4101
+2025-10-21 23:24:46,809 | INFO |   client 3 - samples 2250 - loss 1.3008
+2025-10-21 23:25:02,374 | INFO |   client 6 - samples 2250 - loss 1.3617
+2025-10-21 23:25:20,245 | INFO |   client 17 - samples 2250 - loss 1.3383
+2025-10-21 23:25:37,228 | INFO |   client 1 - samples 2250 - loss 1.4205
+2025-10-21 23:25:56,598 | INFO |   client 4 - samples 2250 - loss 1.3058
+2025-10-21 23:25:56,637 | INFO | Round 72 completed in 184.5s
+2025-10-21 23:25:56,638 | INFO | Round 73/100 - selected clients: [7, 18, 3, 10, 19, 16, 9, 0, 2, 8]
+2025-10-21 23:26:15,686 | INFO |   client 7 - samples 2250 - loss 1.4717
+2025-10-21 23:26:33,860 | INFO |   client 18 - samples 2250 - loss 1.2460
+2025-10-21 23:26:52,043 | INFO |   client 3 - samples 2250 - loss 1.2597
+2025-10-21 23:27:14,571 | INFO |   client 10 - samples 2250 - loss 1.3499
+2025-10-21 23:27:31,107 | INFO |   client 19 - samples 2250 - loss 1.2597
+2025-10-21 23:27:53,999 | INFO |   client 16 - samples 2250 - loss 1.4798
+2025-10-21 23:28:11,252 | INFO |   client 9 - samples 2250 - loss 1.4641
+2025-10-21 23:28:31,768 | INFO |   client 0 - samples 2250 - loss 1.4474
+2025-10-21 23:28:53,820 | INFO |   client 2 - samples 2250 - loss 1.3680
+2025-10-21 23:29:11,563 | INFO |   client 8 - samples 2250 - loss 1.3200
+2025-10-21 23:29:11,603 | INFO | Round 73 completed in 195.0s
+2025-10-21 23:29:11,604 | INFO | Round 74/100 - selected clients: [9, 6, 3, 17, 10, 12, 13, 8, 4, 15]
+2025-10-21 23:29:31,366 | INFO |   client 9 - samples 2250 - loss 1.3939
+2025-10-21 23:29:48,653 | INFO |   client 6 - samples 2250 - loss 1.3490
+2025-10-21 23:30:05,585 | INFO |   client 3 - samples 2250 - loss 1.2250
+2025-10-21 23:30:20,815 | INFO |   client 17 - samples 2250 - loss 1.3188
+2025-10-21 23:30:36,395 | INFO |   client 10 - samples 2250 - loss 1.3103
+2025-10-21 23:30:58,195 | INFO |   client 12 - samples 2250 - loss 1.2249
+2025-10-21 23:31:13,703 | INFO |   client 13 - samples 2250 - loss 1.3712
+2025-10-21 23:31:32,647 | INFO |   client 8 - samples 2250 - loss 1.2593
+2025-10-21 23:31:51,593 | INFO |   client 4 - samples 2250 - loss 1.2809
+2025-10-21 23:32:08,610 | INFO |   client 15 - samples 2250 - loss 1.2266
+2025-10-21 23:32:08,646 | INFO | Round 74 completed in 177.0s
+2025-10-21 23:32:08,646 | INFO | Round 75/100 - selected clients: [19, 17, 9, 0, 3, 11, 2, 7, 12, 15]
+2025-10-21 23:32:24,591 | INFO |   client 19 - samples 2250 - loss 1.2437
+2025-10-21 23:32:42,496 | INFO |   client 17 - samples 2250 - loss 1.2758
+2025-10-21 23:32:58,390 | INFO |   client 9 - samples 2250 - loss 1.3470
+2025-10-21 23:33:17,219 | INFO |   client 0 - samples 2250 - loss 1.4282
+2025-10-21 23:33:39,648 | INFO |   client 3 - samples 2250 - loss 1.1917
+2025-10-21 23:33:56,829 | INFO |   client 11 - samples 2250 - loss 1.4031
+2025-10-21 23:34:11,413 | INFO |   client 2 - samples 2250 - loss 1.3115
+2025-10-21 23:34:28,007 | INFO |   client 7 - samples 2250 - loss 1.4388
+2025-10-21 23:34:44,326 | INFO |   client 12 - samples 2250 - loss 1.1388
+2025-10-21 23:35:06,050 | INFO |   client 15 - samples 2250 - loss 1.1717
+2025-10-21 23:35:06,088 | INFO | Round 75 completed in 177.4s
+2025-10-21 23:35:06,088 | INFO | Round 76/100 - selected clients: [7, 5, 18, 6, 12, 13, 2, 8, 16, 1]
+2025-10-21 23:35:29,521 | INFO |   client 7 - samples 2250 - loss 1.3678
+2025-10-21 23:35:50,219 | INFO |   client 5 - samples 2250 - loss 1.5108
+2025-10-21 23:36:11,787 | INFO |   client 18 - samples 2250 - loss 1.2925
+2025-10-21 23:36:28,244 | INFO |   client 6 - samples 2250 - loss 1.3636
+2025-10-21 23:36:42,875 | INFO |   client 12 - samples 2250 - loss 1.1315
+2025-10-21 23:37:04,162 | INFO |   client 13 - samples 2250 - loss 1.3386
+2025-10-21 23:37:21,493 | INFO |   client 2 - samples 2250 - loss 1.2663
+2025-10-21 23:37:36,120 | INFO |   client 8 - samples 2250 - loss 1.2850
+2025-10-21 23:37:53,427 | INFO |   client 16 - samples 2250 - loss 1.4839
+2025-10-21 23:38:11,834 | INFO |   client 1 - samples 2250 - loss 1.4715
+2025-10-21 23:38:11,873 | INFO | Round 76 completed in 185.8s
+2025-10-21 23:38:11,874 | INFO | Round 77/100 - selected clients: [5, 9, 3, 11, 18, 12, 0, 4, 19, 13]
+2025-10-21 23:38:27,835 | INFO |   client 5 - samples 2250 - loss 1.4441
+2025-10-21 23:38:49,748 | INFO |   client 9 - samples 2250 - loss 1.3489
+2025-10-21 23:39:08,387 | INFO |   client 3 - samples 2250 - loss 1.2542
+2025-10-21 23:39:23,657 | INFO |   client 11 - samples 2250 - loss 1.3826
+2025-10-21 23:39:41,328 | INFO |   client 18 - samples 2250 - loss 1.2007
+2025-10-21 23:39:57,915 | INFO |   client 12 - samples 2250 - loss 1.0910
+2025-10-21 23:40:16,338 | INFO |   client 0 - samples 2250 - loss 1.4275
+2025-10-21 23:40:32,727 | INFO |   client 4 - samples 2250 - loss 1.3259
+2025-10-21 23:40:49,641 | INFO |   client 19 - samples 2250 - loss 1.2580
+2025-10-21 23:41:09,879 | INFO |   client 13 - samples 2250 - loss 1.2928
+2025-10-21 23:41:09,915 | INFO | Round 77 completed in 178.0s
+2025-10-21 23:41:09,915 | INFO | Round 78/100 - selected clients: [9, 5, 17, 13, 3, 1, 6, 10, 15, 2]
+2025-10-21 23:41:27,141 | INFO |   client 9 - samples 2250 - loss 1.2910
+2025-10-21 23:41:41,764 | INFO |   client 5 - samples 2250 - loss 1.3846
+2025-10-21 23:42:01,040 | INFO |   client 17 - samples 2250 - loss 1.3303
+2025-10-21 23:42:16,948 | INFO |   client 13 - samples 2250 - loss 1.2575
+2025-10-21 23:42:35,217 | INFO |   client 3 - samples 2250 - loss 1.1571
+2025-10-21 23:42:50,089 | INFO |   client 1 - samples 2250 - loss 1.4282
+2025-10-21 23:43:06,685 | INFO |   client 6 - samples 2250 - loss 1.3696
+2025-10-21 23:43:23,326 | INFO |   client 10 - samples 2250 - loss 1.3831
+2025-10-21 23:43:41,992 | INFO |   client 15 - samples 2250 - loss 1.2656
+2025-10-21 23:44:00,287 | INFO |   client 2 - samples 2250 - loss 1.2679
+2025-10-21 23:44:00,327 | INFO | Round 78 completed in 170.4s
+2025-10-21 23:44:00,328 | INFO | Round 79/100 - selected clients: [16, 7, 6, 14, 2, 5, 12, 3, 13, 4]
+2025-10-21 23:44:16,194 | INFO |   client 16 - samples 2250 - loss 1.4787
+2025-10-21 23:44:34,838 | INFO |   client 7 - samples 2250 - loss 1.3633
+2025-10-21 23:44:54,110 | INFO |   client 6 - samples 2250 - loss 1.2324
+2025-10-21 23:45:11,552 | INFO |   client 14 - samples 2250 - loss 1.5428
+2025-10-21 23:45:33,084 | INFO |   client 2 - samples 2250 - loss 1.2091
+2025-10-21 23:45:48,725 | INFO |   client 5 - samples 2250 - loss 1.3250
+2025-10-21 23:46:03,617 | INFO |   client 12 - samples 2250 - loss 1.0995
+2025-10-21 23:46:26,884 | INFO |   client 3 - samples 2250 - loss 1.1109
+2025-10-21 23:46:47,705 | INFO |   client 13 - samples 2250 - loss 1.1875
+2025-10-21 23:47:08,767 | INFO |   client 4 - samples 2250 - loss 1.2999
+2025-10-21 23:47:08,806 | INFO | Round 79 completed in 188.5s
+2025-10-21 23:47:08,806 | INFO | Round 80/100 - selected clients: [2, 6, 12, 5, 16, 15, 4, 19, 10, 18]
+2025-10-21 23:47:25,123 | INFO |   client 2 - samples 2250 - loss 1.1720
+2025-10-21 23:47:41,813 | INFO |   client 6 - samples 2250 - loss 1.2170
+2025-10-21 23:48:04,615 | INFO |   client 12 - samples 2250 - loss 1.0642
+2025-10-21 23:48:20,827 | INFO |   client 5 - samples 2250 - loss 1.2930
+2025-10-21 23:48:37,642 | INFO |   client 16 - samples 2250 - loss 1.3925
+2025-10-21 23:48:52,840 | INFO |   client 15 - samples 2250 - loss 1.2331
+2025-10-21 23:49:07,941 | INFO |   client 4 - samples 2250 - loss 1.2225
+2025-10-21 23:49:23,653 | INFO |   client 19 - samples 2250 - loss 1.2737
+2025-10-21 23:49:38,638 | INFO |   client 10 - samples 2250 - loss 1.3533
+2025-10-21 23:49:55,615 | INFO |   client 18 - samples 2250 - loss 1.2657
+2025-10-21 23:49:55,651 | INFO | Round 80 completed in 166.8s
+2025-10-21 23:49:55,651 | INFO | Round 81/100 - selected clients: [16, 6, 9, 2, 11, 12, 3, 7, 10, 17]
+2025-10-21 23:50:12,584 | INFO |   client 16 - samples 2250 - loss 1.3369
+2025-10-21 23:50:36,033 | INFO |   client 6 - samples 2250 - loss 1.1615
+2025-10-21 23:50:53,027 | INFO |   client 9 - samples 2250 - loss 1.3379
+2025-10-21 23:51:09,222 | INFO |   client 2 - samples 2250 - loss 1.1128
+2025-10-21 23:51:25,483 | INFO |   client 11 - samples 2250 - loss 1.3981
+2025-10-21 23:51:44,567 | INFO |   client 12 - samples 2250 - loss 1.0136
+2025-10-21 23:52:02,358 | INFO |   client 3 - samples 2250 - loss 1.1733
+2025-10-21 23:52:23,594 | INFO |   client 7 - samples 2250 - loss 1.3551
+2025-10-21 23:52:38,769 | INFO |   client 10 - samples 2250 - loss 1.2792
+2025-10-21 23:52:54,298 | INFO |   client 17 - samples 2250 - loss 1.3454
+2025-10-21 23:52:54,333 | INFO | Round 81 completed in 178.7s
+2025-10-21 23:52:54,334 | INFO | Round 82/100 - selected clients: [1, 8, 2, 13, 18, 19, 16, 0, 6, 15]
+2025-10-21 23:53:11,150 | INFO |   client 1 - samples 2250 - loss 1.4809
+2025-10-21 23:53:28,820 | INFO |   client 8 - samples 2250 - loss 1.3993
+2025-10-21 23:53:43,736 | INFO |   client 2 - samples 2250 - loss 1.0908
+2025-10-21 23:54:02,380 | INFO |   client 13 - samples 2250 - loss 1.2834
+2025-10-21 23:54:17,248 | INFO |   client 18 - samples 2250 - loss 1.2606
+2025-10-21 23:54:33,364 | INFO |   client 19 - samples 2250 - loss 1.2983
+2025-10-21 23:54:49,372 | INFO |   client 16 - samples 2250 - loss 1.3002
+2025-10-21 23:55:04,017 | INFO |   client 0 - samples 2250 - loss 1.4859
+2025-10-21 23:55:22,491 | INFO |   client 6 - samples 2250 - loss 1.1507
+2025-10-21 23:55:37,320 | INFO |   client 15 - samples 2250 - loss 1.2435
+2025-10-21 23:55:37,360 | INFO | Round 82 completed in 163.0s
+2025-10-21 23:55:37,360 | INFO | Round 83/100 - selected clients: [8, 17, 0, 5, 1, 6, 4, 12, 16, 18]
+2025-10-21 23:56:01,373 | INFO |   client 8 - samples 2250 - loss 1.3131
+2025-10-21 23:56:17,919 | INFO |   client 17 - samples 2250 - loss 1.3369
+2025-10-21 23:56:33,455 | INFO |   client 0 - samples 2250 - loss 1.3843
+2025-10-21 23:56:48,434 | INFO |   client 5 - samples 2250 - loss 1.3675
+2025-10-21 23:57:09,277 | INFO |   client 1 - samples 2250 - loss 1.3953
+2025-10-21 23:57:24,438 | INFO |   client 6 - samples 2250 - loss 1.1146
+2025-10-21 23:57:43,334 | INFO |   client 4 - samples 2250 - loss 1.2782
+2025-10-21 23:57:59,675 | INFO |   client 12 - samples 2250 - loss 1.0669
+2025-10-21 23:58:16,003 | INFO |   client 16 - samples 2250 - loss 1.2721
+2025-10-21 23:58:31,388 | INFO |   client 18 - samples 2250 - loss 1.1762
+2025-10-21 23:58:31,428 | INFO | Round 83 completed in 174.1s
+2025-10-21 23:58:31,428 | INFO | Round 84/100 - selected clients: [7, 19, 9, 5, 11, 2, 17, 4, 13, 10]
+2025-10-21 23:58:47,696 | INFO |   client 7 - samples 2250 - loss 1.3839
+2025-10-21 23:59:02,402 | INFO |   client 19 - samples 2250 - loss 1.2666
+2025-10-21 23:59:24,575 | INFO |   client 9 - samples 2250 - loss 1.3542
+2025-10-21 23:59:44,207 | INFO |   client 5 - samples 2250 - loss 1.3056
+2025-10-22 00:00:02,395 | INFO |   client 11 - samples 2250 - loss 1.4072
+2025-10-22 00:00:24,664 | INFO |   client 2 - samples 2250 - loss 1.1494
+2025-10-22 00:00:42,510 | INFO |   client 17 - samples 2250 - loss 1.2414
+2025-10-22 00:01:01,522 | INFO |   client 4 - samples 2250 - loss 1.1895
+2025-10-22 00:01:16,183 | INFO |   client 13 - samples 2250 - loss 1.2494
+2025-10-22 00:01:32,011 | INFO |   client 10 - samples 2250 - loss 1.3572
+2025-10-22 00:01:32,045 | INFO | Round 84 completed in 180.6s
+2025-10-22 00:01:32,045 | INFO | Round 85/100 - selected clients: [18, 1, 14, 7, 5, 16, 17, 3, 2, 10]
+2025-10-22 00:01:48,106 | INFO |   client 18 - samples 2250 - loss 1.1948
+2025-10-22 00:02:05,821 | INFO |   client 1 - samples 2250 - loss 1.3988
+2025-10-22 00:02:21,476 | INFO |   client 14 - samples 2250 - loss 1.5750
+2025-10-22 00:02:41,486 | INFO |   client 7 - samples 2250 - loss 1.3201
+2025-10-22 00:02:57,500 | INFO |   client 5 - samples 2250 - loss 1.2208
+2025-10-22 00:03:13,915 | INFO |   client 16 - samples 2250 - loss 1.2587
+2025-10-22 00:03:30,362 | INFO |   client 17 - samples 2250 - loss 1.1895
+2025-10-22 00:03:47,635 | INFO |   client 3 - samples 2250 - loss 1.2617
+2025-10-22 00:04:05,057 | INFO |   client 2 - samples 2250 - loss 1.0996
+2025-10-22 00:04:20,765 | INFO |   client 10 - samples 2250 - loss 1.2696
+2025-10-22 00:04:20,805 | INFO | Round 85 completed in 168.8s
+2025-10-22 00:04:20,806 | INFO | Round 86/100 - selected clients: [1, 18, 3, 0, 16, 4, 17, 6, 13, 14]
+2025-10-22 00:04:39,741 | INFO |   client 1 - samples 2250 - loss 1.2994
+2025-10-22 00:04:57,426 | INFO |   client 18 - samples 2250 - loss 1.1303
+2025-10-22 00:05:16,002 | INFO |   client 3 - samples 2250 - loss 1.1618
+2025-10-22 00:05:32,714 | INFO |   client 0 - samples 2250 - loss 1.4183
+2025-10-22 00:05:48,489 | INFO |   client 16 - samples 2250 - loss 1.1987
+2025-10-22 00:06:05,451 | INFO |   client 4 - samples 2250 - loss 1.1806
+2025-10-22 00:06:21,843 | INFO |   client 17 - samples 2250 - loss 1.1283
+2025-10-22 00:06:42,366 | INFO |   client 6 - samples 2250 - loss 1.1715
+2025-10-22 00:07:01,693 | INFO |   client 13 - samples 2250 - loss 1.2132
+2025-10-22 00:07:18,942 | INFO |   client 14 - samples 2250 - loss 1.4509
+2025-10-22 00:07:18,981 | INFO | Round 86 completed in 178.2s
+2025-10-22 00:07:18,982 | INFO | Round 87/100 - selected clients: [7, 12, 16, 11, 4, 19, 0, 2, 5, 10]
+2025-10-22 00:07:39,008 | INFO |   client 7 - samples 2250 - loss 1.2941
+2025-10-22 00:07:59,828 | INFO |   client 12 - samples 2250 - loss 1.1386
+2025-10-22 00:08:17,104 | INFO |   client 16 - samples 2250 - loss 1.1811
+2025-10-22 00:08:33,283 | INFO |   client 11 - samples 2250 - loss 1.3824
+2025-10-22 00:08:50,362 | INFO |   client 4 - samples 2250 - loss 1.0955
+2025-10-22 00:09:05,711 | INFO |   client 19 - samples 2250 - loss 1.2978
+2025-10-22 00:09:21,780 | INFO |   client 0 - samples 2250 - loss 1.3227
+2025-10-22 00:09:38,084 | INFO |   client 2 - samples 2250 - loss 1.0826
+2025-10-22 00:09:53,107 | INFO |   client 5 - samples 2250 - loss 1.2524
+2025-10-22 00:10:08,026 | INFO |   client 10 - samples 2250 - loss 1.2561
+2025-10-22 00:10:08,066 | INFO | Round 87 completed in 169.1s
+2025-10-22 00:10:08,067 | INFO | Round 88/100 - selected clients: [18, 16, 8, 1, 12, 10, 3, 5, 13, 19]
+2025-10-22 00:10:25,309 | INFO |   client 18 - samples 2250 - loss 1.1475
+2025-10-22 00:10:41,795 | INFO |   client 16 - samples 2250 - loss 1.1186
+2025-10-22 00:10:57,559 | INFO |   client 8 - samples 2250 - loss 1.3881
+2025-10-22 00:11:12,705 | INFO |   client 1 - samples 2250 - loss 1.3090
+2025-10-22 00:11:29,705 | INFO |   client 12 - samples 2250 - loss 1.1028
+2025-10-22 00:11:44,921 | INFO |   client 10 - samples 2250 - loss 1.2041
+2025-10-22 00:12:00,037 | INFO |   client 3 - samples 2250 - loss 1.1844
+2025-10-22 00:12:15,380 | INFO |   client 5 - samples 2250 - loss 1.1783
+2025-10-22 00:12:32,003 | INFO |   client 13 - samples 2250 - loss 1.2612
+2025-10-22 00:12:47,817 | INFO |   client 19 - samples 2250 - loss 1.2023
+2025-10-22 00:12:47,879 | INFO | Round 88 completed in 159.8s
+2025-10-22 00:12:47,879 | INFO | Round 89/100 - selected clients: [16, 13, 8, 14, 19, 0, 5, 3, 9, 18]
+2025-10-22 00:13:03,873 | INFO |   client 16 - samples 2250 - loss 1.1128
+2025-10-22 00:13:19,615 | INFO |   client 13 - samples 2250 - loss 1.1512
+2025-10-22 00:13:34,635 | INFO |   client 8 - samples 2250 - loss 1.3048
+2025-10-22 00:13:49,351 | INFO |   client 14 - samples 2250 - loss 1.4962
+2025-10-22 00:14:04,344 | INFO |   client 19 - samples 2250 - loss 1.1530
+2025-10-22 00:14:20,113 | INFO |   client 0 - samples 2250 - loss 1.3400
+2025-10-22 00:14:36,212 | INFO |   client 5 - samples 2250 - loss 1.1342
+2025-10-22 00:14:51,602 | INFO |   client 3 - samples 2250 - loss 1.1315
+2025-10-22 00:15:07,291 | INFO |   client 9 - samples 2250 - loss 1.4326
+2025-10-22 00:15:25,799 | INFO |   client 18 - samples 2250 - loss 1.0726
+2025-10-22 00:15:25,834 | INFO | Round 89 completed in 158.0s
+2025-10-22 00:15:25,835 | INFO | Round 90/100 - selected clients: [10, 11, 16, 2, 12, 4, 0, 6, 1, 5]
+2025-10-22 00:15:40,612 | INFO |   client 10 - samples 2250 - loss 1.2127
+2025-10-22 00:15:55,690 | INFO |   client 11 - samples 2250 - loss 1.4078
+2025-10-22 00:16:13,348 | INFO |   client 16 - samples 2250 - loss 1.0579
+2025-10-22 00:16:30,033 | INFO |   client 2 - samples 2250 - loss 1.1739
+2025-10-22 00:16:47,057 | INFO |   client 12 - samples 2250 - loss 1.1116
+2025-10-22 00:17:03,136 | INFO |   client 4 - samples 2250 - loss 1.2160
+2025-10-22 00:17:18,667 | INFO |   client 0 - samples 2250 - loss 1.2733
+2025-10-22 00:17:34,505 | INFO |   client 6 - samples 2250 - loss 1.2813
+2025-10-22 00:17:50,874 | INFO |   client 1 - samples 2250 - loss 1.3179
+2025-10-22 00:18:06,221 | INFO |   client 5 - samples 2250 - loss 1.0882
+2025-10-22 00:18:06,262 | INFO | Round 90 completed in 160.4s
+2025-10-22 00:18:06,263 | INFO | Round 91/100 - selected clients: [13, 4, 19, 1, 5, 14, 0, 18, 16, 8]
+2025-10-22 00:18:22,633 | INFO |   client 13 - samples 2250 - loss 1.1710
+2025-10-22 00:18:39,471 | INFO |   client 4 - samples 2250 - loss 1.1262
+2025-10-22 00:18:55,657 | INFO |   client 19 - samples 2250 - loss 1.1781
+2025-10-22 00:19:11,722 | INFO |   client 1 - samples 2250 - loss 1.2445
+2025-10-22 00:19:28,390 | INFO |   client 5 - samples 2250 - loss 1.0644
+2025-10-22 00:19:44,399 | INFO |   client 14 - samples 2250 - loss 1.5015
+2025-10-22 00:20:00,295 | INFO |   client 0 - samples 2250 - loss 1.2144
+2025-10-22 00:20:17,132 | INFO |   client 18 - samples 2250 - loss 1.1257
+2025-10-22 00:20:35,813 | INFO |   client 16 - samples 2250 - loss 1.0498
+2025-10-22 00:20:50,610 | INFO |   client 8 - samples 2250 - loss 1.3047
+2025-10-22 00:20:50,649 | INFO | Round 91 completed in 164.4s
+2025-10-22 00:20:50,649 | INFO | Round 92/100 - selected clients: [15, 11, 19, 10, 16, 14, 8, 18, 9, 0]
+2025-10-22 00:21:07,055 | INFO |   client 15 - samples 2250 - loss 1.4424
+2025-10-22 00:21:22,546 | INFO |   client 11 - samples 2250 - loss 1.3809
+2025-10-22 00:21:38,801 | INFO |   client 19 - samples 2250 - loss 1.1273
+2025-10-22 00:21:54,931 | INFO |   client 10 - samples 2250 - loss 1.1928
+2025-10-22 00:22:10,692 | INFO |   client 16 - samples 2250 - loss 1.0093
+2025-10-22 00:22:26,803 | INFO |   client 14 - samples 2250 - loss 1.3845
+2025-10-22 00:22:45,581 | INFO |   client 8 - samples 2250 - loss 1.2235
+2025-10-22 00:23:02,733 | INFO |   client 18 - samples 2250 - loss 1.0323
+2025-10-22 00:23:22,686 | INFO |   client 9 - samples 2250 - loss 1.3907
+2025-10-22 00:23:38,049 | INFO |   client 0 - samples 2250 - loss 1.1746
+2025-10-22 00:23:38,085 | INFO | Round 92 completed in 167.4s
+2025-10-22 00:23:38,085 | INFO | Round 93/100 - selected clients: [15, 16, 6, 4, 0, 10, 12, 7, 1, 17]
+2025-10-22 00:23:54,149 | INFO |   client 15 - samples 2250 - loss 1.3191
+2025-10-22 00:24:11,890 | INFO |   client 16 - samples 2250 - loss 0.9633
+2025-10-22 00:24:28,968 | INFO |   client 6 - samples 2250 - loss 1.2869
+2025-10-22 00:24:43,924 | INFO |   client 4 - samples 2250 - loss 1.1164
+2025-10-22 00:25:02,894 | INFO |   client 0 - samples 2250 - loss 1.1456
+2025-10-22 00:25:18,993 | INFO |   client 10 - samples 2250 - loss 1.1355
+2025-10-22 00:25:34,401 | INFO |   client 12 - samples 2250 - loss 1.1367
+2025-10-22 00:25:50,063 | INFO |   client 7 - samples 2250 - loss 1.4403
+2025-10-22 00:26:10,222 | INFO |   client 1 - samples 2250 - loss 1.2495
+2025-10-22 00:26:28,532 | INFO |   client 17 - samples 2250 - loss 1.3460
+2025-10-22 00:26:28,568 | INFO | Round 93 completed in 170.5s
+2025-10-22 00:26:28,569 | INFO | Round 94/100 - selected clients: [11, 18, 8, 15, 9, 13, 19, 1, 7, 4]
+2025-10-22 00:26:45,089 | INFO |   client 11 - samples 2250 - loss 1.3353
+2025-10-22 00:27:00,155 | INFO |   client 18 - samples 2250 - loss 1.0728
+2025-10-22 00:27:17,681 | INFO |   client 8 - samples 2250 - loss 1.2172
+2025-10-22 00:27:43,583 | INFO |   client 15 - samples 2250 - loss 1.2533
+2025-10-22 00:28:08,391 | INFO |   client 9 - samples 2250 - loss 1.3192
+2025-10-22 00:28:29,186 | INFO |   client 13 - samples 2250 - loss 1.2645
+2025-10-22 00:28:51,418 | INFO |   client 19 - samples 2250 - loss 1.1387
+2025-10-22 00:29:07,695 | INFO |   client 1 - samples 2250 - loss 1.1464
+2025-10-22 00:29:31,798 | INFO |   client 7 - samples 2250 - loss 1.3144
+2025-10-22 00:29:47,395 | INFO |   client 4 - samples 2250 - loss 1.0780
+2025-10-22 00:29:47,432 | INFO | Round 94 completed in 198.9s
+2025-10-22 00:29:47,432 | INFO | Round 95/100 - selected clients: [18, 13, 16, 1, 19, 7, 12, 3, 6, 2]
+2025-10-22 00:30:03,121 | INFO |   client 18 - samples 2250 - loss 0.9793
+2025-10-22 00:30:19,127 | INFO |   client 13 - samples 2250 - loss 1.1166
+2025-10-22 00:30:43,608 | INFO |   client 16 - samples 2250 - loss 1.0123
+2025-10-22 00:31:00,403 | INFO |   client 1 - samples 2250 - loss 1.0970
+2025-10-22 00:31:19,882 | INFO |   client 19 - samples 2250 - loss 1.0711
+2025-10-22 00:31:40,920 | INFO |   client 7 - samples 2250 - loss 1.2479
+2025-10-22 00:32:02,763 | INFO |   client 12 - samples 2250 - loss 1.1056
+2025-10-22 00:32:20,729 | INFO |   client 3 - samples 2250 - loss 1.2800
+2025-10-22 00:32:37,607 | INFO |   client 6 - samples 2250 - loss 1.2257
+2025-10-22 00:33:00,065 | INFO |   client 2 - samples 2250 - loss 1.2410
+2025-10-22 00:33:00,102 | INFO | Round 95 completed in 192.7s
+2025-10-22 00:33:00,102 | INFO | Round 96/100 - selected clients: [2, 5, 13, 10, 6, 3, 7, 18, 0, 15]
+2025-10-22 00:33:18,498 | INFO |   client 2 - samples 2250 - loss 1.1307
+2025-10-22 00:33:34,606 | INFO |   client 5 - samples 2250 - loss 1.2738
+2025-10-22 00:33:57,805 | INFO |   client 13 - samples 2250 - loss 1.0741
+2025-10-22 00:34:18,436 | INFO |   client 10 - samples 2250 - loss 1.1886
+2025-10-22 00:34:41,547 | INFO |   client 6 - samples 2250 - loss 1.1290
+2025-10-22 00:35:01,318 | INFO |   client 3 - samples 2250 - loss 1.1878
+2025-10-22 00:35:20,397 | INFO |   client 7 - samples 2250 - loss 1.1935
+2025-10-22 00:35:36,597 | INFO |   client 18 - samples 2250 - loss 0.9260
+2025-10-22 00:35:53,398 | INFO |   client 0 - samples 2250 - loss 1.2131
+2025-10-22 00:36:15,409 | INFO |   client 15 - samples 2250 - loss 1.2402
+2025-10-22 00:36:15,445 | INFO | Round 96 completed in 195.3s
+2025-10-22 00:36:15,446 | INFO | Round 97/100 - selected clients: [6, 12, 14, 9, 19, 8, 13, 4, 3, 2]
+2025-10-22 00:36:31,846 | INFO |   client 6 - samples 2250 - loss 1.0256
+2025-10-22 00:36:52,881 | INFO |   client 12 - samples 2250 - loss 1.1186
+2025-10-22 00:37:10,356 | INFO |   client 14 - samples 2250 - loss 1.4878
+2025-10-22 00:37:27,604 | INFO |   client 9 - samples 2250 - loss 1.3888
+2025-10-22 00:37:43,221 | INFO |   client 19 - samples 2250 - loss 1.0960
+2025-10-22 00:38:03,817 | INFO |   client 8 - samples 2250 - loss 1.2661
+2025-10-22 00:38:24,478 | INFO |   client 13 - samples 2250 - loss 1.0378
+2025-10-22 00:38:44,192 | INFO |   client 4 - samples 2250 - loss 1.1355
+2025-10-22 00:38:59,492 | INFO |   client 3 - samples 2250 - loss 1.1292
+2025-10-22 00:39:24,956 | INFO |   client 2 - samples 2250 - loss 1.0733
+2025-10-22 00:39:24,994 | INFO | Round 97 completed in 189.5s
+2025-10-22 00:39:24,994 | INFO | Round 98/100 - selected clients: [0, 17, 9, 19, 10, 12, 4, 5, 18, 2]
+2025-10-22 00:39:41,268 | INFO |   client 0 - samples 2250 - loss 1.2488
+2025-10-22 00:39:56,673 | INFO |   client 17 - samples 2250 - loss 1.4185
+2025-10-22 00:40:15,034 | INFO |   client 9 - samples 2250 - loss 1.2553
+2025-10-22 00:40:38,912 | INFO |   client 19 - samples 2250 - loss 1.0723
+2025-10-22 00:40:56,599 | INFO |   client 10 - samples 2250 - loss 1.2069
+2025-10-22 00:41:17,277 | INFO |   client 12 - samples 2250 - loss 1.0220
+2025-10-22 00:41:37,774 | INFO |   client 4 - samples 2250 - loss 1.0673
+2025-10-22 00:41:57,266 | INFO |   client 5 - samples 2250 - loss 1.2301
+2025-10-22 00:42:13,253 | INFO |   client 18 - samples 2250 - loss 1.0302
+2025-10-22 00:42:32,126 | INFO |   client 2 - samples 2250 - loss 1.0245
+2025-10-22 00:42:32,161 | INFO | Round 98 completed in 187.2s
+2025-10-22 00:42:32,161 | INFO | Round 99/100 - selected clients: [3, 0, 8, 18, 1, 10, 11, 19, 16, 17]
+2025-10-22 00:42:48,226 | INFO |   client 3 - samples 2250 - loss 1.1698
+2025-10-22 00:43:12,605 | INFO |   client 0 - samples 2250 - loss 1.1418
+2025-10-22 00:43:33,711 | INFO |   client 8 - samples 2250 - loss 1.2610
+2025-10-22 00:43:49,815 | INFO |   client 18 - samples 2250 - loss 0.9246
+2025-10-22 00:44:14,793 | INFO |   client 1 - samples 2250 - loss 1.2422
+2025-10-22 00:44:39,176 | INFO |   client 10 - samples 2250 - loss 1.1101
+2025-10-22 00:44:58,254 | INFO |   client 11 - samples 2250 - loss 1.4270
+2025-10-22 00:45:20,770 | INFO |   client 19 - samples 2250 - loss 1.0059
+2025-10-22 00:45:41,856 | INFO |   client 16 - samples 2250 - loss 1.1400
+2025-10-22 00:46:06,719 | INFO |   client 17 - samples 2250 - loss 1.3122
+2025-10-22 00:46:06,754 | INFO | Round 99 completed in 214.6s
+2025-10-22 00:46:06,755 | INFO | Round 100/100 - selected clients: [16, 0, 15, 5, 14, 18, 4, 10, 8, 17]
+2025-10-22 00:46:33,476 | INFO |   client 16 - samples 2250 - loss 1.0095
+2025-10-22 00:46:56,838 | INFO |   client 0 - samples 2250 - loss 1.0686
+2025-10-22 00:47:16,642 | INFO |   client 15 - samples 2250 - loss 1.3073
+2025-10-22 00:47:36,081 | INFO |   client 5 - samples 2250 - loss 1.1898
+2025-10-22 00:47:58,020 | INFO |   client 14 - samples 2250 - loss 1.4840
+2025-10-22 00:48:25,821 | INFO |   client 18 - samples 2250 - loss 0.8640
+2025-10-22 00:48:51,945 | INFO |   client 4 - samples 2250 - loss 1.0434
+2025-10-22 00:49:12,280 | INFO |   client 10 - samples 2250 - loss 1.0462
+2025-10-22 00:49:29,999 | INFO |   client 8 - samples 2250 - loss 1.1521
+2025-10-22 00:49:48,109 | INFO |   client 17 - samples 2250 - loss 1.1949
+2025-10-22 00:49:48,148 | INFO | Round 100 completed in 221.4s
+2025-10-22 00:49:48,157 | INFO | Training finished. final model saved to outputs/experiments\20251021_200357__fed_exp\global_model_final.pth
+2025-10-22 00:49:48,311 | INFO | Federated training finished.
+2025-10-22 00:49:48,315 | INFO | Run summary written to outputs/experiments\20251021_200357__fed_exp\run_summary.json

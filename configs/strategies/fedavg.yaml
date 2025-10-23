@@ -1,0 +1,4 @@
+federated:
+  strategy: FedAvg
+  server_lr: null
+  aggregation: mean

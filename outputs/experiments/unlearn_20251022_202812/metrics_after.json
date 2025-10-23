@@ -1,0 +1,6 @@
+{
+    "phase": "after",
+    "method": "fucp",
+    "loss": 2.3057989147186277,
+    "acc": 0.1
+}

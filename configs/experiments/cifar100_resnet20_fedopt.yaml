@@ -1,0 +1,26 @@
+experiment:
+  id: exp_cifar100_resnet20_fedopt
+  description: >
+    Federated training on CIFAR100 using ResNet20 and FedOpt strategy.
+    Used to evaluate model robustness and class-level unlearning on a fine-grained dataset.
+  dataset: CIFAR100
+  model: resnet20
+  strategy: FedOpt
+
+  total_rounds: 120
+  unlearn_rounds: 50
+  batch_size: 128
+  lr: 0.01
+  optimizer: sgd
+  momentum: 0.9
+  weight_decay: 5e-4
+
+  output_dir: ./outputs/experiments/cifar100_resnet20_fedopt
+  save_heatmaps: true
+  enable_unlearning: true
+  enable_attack: true
+  attack_method: heatmap_reconstruction
+
+  notes: >
+    This setup will later be used for class-level unlearning validation and 
+    reconstruction attacks based on saliency and confidence difference.
