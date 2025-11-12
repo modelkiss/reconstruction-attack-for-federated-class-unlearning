@@ -7,7 +7,7 @@ Aggregation strategies implementations:
 - FedOpt: server-side optimizer (Adam) updates using aggregated client deltas treated as gradients
 """
 
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 import copy
 import torch
 import torch.optim as optim
@@ -182,3 +182,47 @@ def dp_fedavg_aggregate(
         new_state[key] = updated.cpu().clone()
 
     return new_state
+
+
+def secagg_aggregate(
+    global_state: Dict[str, torch.Tensor],
+    client_results: List[Dict[str, Any]],
+    generator: Optional[torch.Generator] = None,
+):
+    """Simulated secure aggregation using random masks that cancel out after summation."""
+
+    if not client_results:
+        return {k: v.detach().cpu().clone() for k, v in global_state.items()}
+
+    device = torch.device("cpu")
+    generator = generator or torch.Generator(device=device)
+    total_samples = sum(r["num_samples"] for r in client_results) or 1
+
+    masked_accumulator = {
+        k: torch.zeros_like(v, dtype=torch.float32, device=device)
+        for k, v in global_state.items()
+    }
+    mask_totals = {
+        k: torch.zeros_like(v, dtype=torch.float32, device=device)
+        for k, v in global_state.items()
+    }
+
+    for result in client_results:
+        weight = result["num_samples"] / total_samples
+        state = result["state_dict"]
+        for key in global_state.keys():
+            tensor = state[key].cpu().to(torch.float32)
+            mask = torch.randn_like(tensor, generator=generator)
+            masked_accumulator[key] += (tensor + mask) * weight
+            mask_totals[key] += mask * weight
+
+    aggregated = {}
+    for key, base in global_state.items():
+        value = masked_accumulator[key] - mask_totals[key]
+        if base.dtype in (torch.int8, torch.int16, torch.int32, torch.int64, torch.uint8):
+            value = torch.round(value).to(base.dtype)
+        else:
+            value = value.to(base.dtype)
+        aggregated[key] = value.cpu().clone()
+
+    return aggregated
