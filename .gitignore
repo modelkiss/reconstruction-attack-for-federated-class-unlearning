@@ -1,3 +1,5 @@
 data/
+!src/data/
+!src/data/**
 *.pt
 *.tar.gz
