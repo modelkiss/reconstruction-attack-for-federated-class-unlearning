@@ -23,7 +23,7 @@ MODEL_REGISTRY = {
 
 def infer_in_channels(dataset_name: str):
     dataset_name = dataset_name.lower()
-    if "cifar" in dataset_name:
+    if any(name in dataset_name for name in ["cifar", "svhn", "flair"]):
         return 3
     else:
         return 1
@@ -33,6 +33,8 @@ def infer_num_classes(dataset_name: str):
     dataset_name = dataset_name.lower()
     if "cifar100" in dataset_name:
         return 100
+    if "femnist" in dataset_name:
+        return 62
     else:
         return 10
 

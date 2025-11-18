@@ -7,9 +7,12 @@ import random
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence, Tuple
 
+import os
+
 import torch
 from torch.utils.data import DataLoader, Dataset, Subset
 from torchvision import datasets
+from torchvision.datasets import ImageFolder
 
 from .dataset_factory import CustomTensorDataset
 from .transforms import get_eval_transforms, get_train_transforms
@@ -22,6 +25,9 @@ _DATASET_MAP = {
     "mnist": (datasets.MNIST, {"image_size": 28, "normalize": {"mean": [0.1307], "std": [0.3081]}}),
     # FEMNIST approximated by EMNIST (ByClass split)
     "femnist": (datasets.EMNIST, {"split": "byclass", "image_size": 28, "normalize": {"mean": [0.1307], "std": [0.3081]}}),
+    "svhn": (datasets.SVHN, {"image_size": 32, "normalize": {"mean": [0.4377, 0.4438, 0.4728], "std": [0.1980, 0.2010, 0.1970]}, "split": "train"}),
+    # FLAIR is handled through ImageFolder; expected structure: <root>/FLAIR/train, <root>/FLAIR/test
+    "flair": (ImageFolder, {"image_size": 224, "normalize": {"mean": [0.5, 0.5, 0.5], "std": [0.5, 0.5, 0.5]}, "relative_root": "FLAIR"}),
 }
 
 
@@ -80,7 +86,21 @@ def _dataset_to_tensors(dataset: Dataset) -> Tuple[torch.Tensor, torch.Tensor]:
     return tensor, label_tensor
 
 
-def load_dataset_tensors(dataset_name: str, root: str = "./data/raw") -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, int, Dict]:
+def _load_flair(root: str, relative_root: str) -> Tuple[Dataset, Dataset]:
+    train_path = os.path.join(root, relative_root, "train")
+    test_path = os.path.join(root, relative_root, "test")
+    if not (os.path.isdir(train_path) and os.path.isdir(test_path)):
+        raise FileNotFoundError(
+            f"FLAIR dataset not found. Expected train/test folders under {os.path.join(root, relative_root)}."
+        )
+    train_ds = ImageFolder(train_path)
+    test_ds = ImageFolder(test_path)
+    return train_ds, test_ds
+
+
+def load_dataset_tensors(
+    dataset_name: str, root: str = "./data/raw"
+) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, int, Dict]:
     """Load a torchvision dataset and return tensors for train/test splits."""
 
     name = dataset_name.lower()
@@ -92,10 +112,18 @@ def load_dataset_tensors(dataset_name: str, root: str = "./data/raw") -> Tuple[t
 
     ds_cls, extra_cfg = _DATASET_MAP[name]
     kwargs = dict(root=root, download=True)
+
     if name == "femnist":
         split = extra_cfg.get("split", "byclass")
         train_ds = ds_cls(split=split, train=True, **kwargs)
         test_ds = ds_cls(split=split, train=False, **kwargs)
+    elif name == "svhn":
+        split = extra_cfg.get("split", "train")
+        train_ds = ds_cls(split=split, **kwargs)
+        test_ds = ds_cls(split="test", **kwargs)
+    elif name == "flair":
+        rel_root = extra_cfg.get("relative_root", "FLAIR")
+        train_ds, test_ds = _load_flair(root, rel_root)
     else:
         train_ds = ds_cls(train=True, **kwargs)
         test_ds = ds_cls(train=False, **kwargs)
@@ -104,6 +132,8 @@ def load_dataset_tensors(dataset_name: str, root: str = "./data/raw") -> Tuple[t
     test_images, test_labels = _dataset_to_tensors(test_ds)
 
     num_classes = infer_num_classes(dataset_name)
+    if hasattr(train_ds, "classes"):
+        num_classes = max(num_classes, len(getattr(train_ds, "classes")))
     meta = {
         "image_size": extra_cfg.get("image_size", train_images.shape[-1]),
         "normalize": extra_cfg.get("normalize"),
@@ -165,6 +195,33 @@ def split_test_indices(
             client_assignments[cid].extend(rr[cid])
 
     return server_indices, client_assignments
+
+
+def split_holdout_by_class(labels: torch.Tensor, fraction: float = 0.1, seed: int = 0) -> Tuple[List[int], List[int]]:
+    """Reserve a per-class holdout split for downstream tasks (e.g., diffusion pre-training).
+
+    Returns:
+        holdout_indices: indices kept for holdout
+        remaining_indices: indices used for federated training
+    """
+
+    if not 0 < fraction < 1:
+        raise ValueError("fraction must be in (0, 1)")
+
+    rng = random.Random(seed)
+    class_indices: Dict[int, List[int]] = {}
+    for idx, label in enumerate(labels.tolist()):
+        class_indices.setdefault(label, []).append(idx)
+
+    holdout: List[int] = []
+    remaining: List[int] = []
+    for _, idxs in class_indices.items():
+        rng.shuffle(idxs)
+        cutoff = max(1, int(len(idxs) * fraction))
+        holdout.extend(idxs[:cutoff])
+        remaining.extend(idxs[cutoff:])
+
+    return holdout, remaining
 
 
 def create_dataloaders(
