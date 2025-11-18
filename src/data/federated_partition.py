@@ -9,6 +9,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 import os
 
+import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset, Subset
 from torchvision import datasets
@@ -170,6 +171,74 @@ def partition_indices_by_class(
     return assignments
 
 
+def dirichlet_partition_indices(
+    labels: torch.Tensor,
+    num_clients: int,
+    *,
+    alpha: float = 0.5,
+    seed: int = 0,
+    with_replacement: bool = False,
+    min_size: int = 1,
+) -> Dict[int, List[int]]:
+    """Partition data indices across clients using a Dirichlet distribution.
+
+    Args:
+        labels: Class labels for the dataset to partition.
+        num_clients: Number of clients to split across.
+        alpha: Dirichlet concentration parameter.
+        seed: RNG seed.
+        with_replacement: Whether to sample indices with replacement.
+        min_size: Minimum number of samples per client (best-effort).
+
+    Returns:
+        Mapping of client id to list of assigned indices.
+    """
+
+    rng = np.random.default_rng(seed)
+    labels_np = labels.cpu().numpy()
+    num_classes = int(labels_np.max()) + 1
+    class_indices = [np.where(labels_np == i)[0].tolist() for i in range(num_classes)]
+
+    assignments: Dict[int, List[int]] = {cid: [] for cid in range(num_clients)}
+    for idxs in class_indices:
+        if not idxs:
+            continue
+
+        proportions = rng.dirichlet([alpha] * num_clients)
+        counts = (proportions * len(idxs)).astype(int)
+        while counts.sum() < len(idxs):
+            counts[rng.integers(0, num_clients)] += 1
+
+        rng.shuffle(idxs)
+        ptr = 0
+        for cid, count in enumerate(counts.tolist()):
+            if count <= 0:
+                continue
+            if with_replacement:
+                sampled = rng.choice(idxs, size=count, replace=True).tolist()
+            else:
+                sampled = idxs[ptr : ptr + count]
+                ptr += count
+            assignments[cid].extend(int(i) for i in sampled)
+
+    for cid in range(num_clients):
+        if len(assignments[cid]) < min_size:
+            largest = max(assignments, key=lambda c: len(assignments[c]))
+            if len(assignments[largest]) > 1:
+                assignments[cid].append(assignments[largest].pop())
+
+    return assignments
+
+
+def iid_partition_indices(labels: torch.Tensor, num_clients: int, seed: int = 0) -> Dict[int, List[int]]:
+    """Randomly shuffle indices and split evenly across clients (IID, no replacement)."""
+
+    rng = random.Random(seed)
+    indices = list(range(len(labels)))
+    rng.shuffle(indices)
+    return _round_robin_assign(indices, num_clients)
+
+
 def split_test_indices(
     labels: torch.Tensor,
     num_clients: int,
@@ -222,6 +291,41 @@ def split_holdout_by_class(labels: torch.Tensor, fraction: float = 0.1, seed: in
         remaining.extend(idxs[cutoff:])
 
     return holdout, remaining
+
+
+def partition_train_indices(
+    labels: torch.Tensor,
+    num_clients: int,
+    *,
+    strategy: str = "balanced",
+    seed: int = 0,
+    dirichlet_alpha: float = 0.5,
+) -> Dict[int, List[int]]:
+    """Dispatch helper to partition training data based on strategy.
+
+    Supported strategies:
+    - balanced: per-class round robin (previous default)
+    - dirichlet_no_replacement: Dirichlet proportions sampled without replacement
+    - dirichlet_with_replacement: Dirichlet proportions sampled with replacement
+    - iid: random shuffle split without replacement
+    """
+
+    key = strategy.lower()
+    if key == "balanced":
+        return partition_indices_by_class(labels, num_clients, seed=seed)
+    if key in {"dirichlet", "dirichlet_no_replacement"}:
+        return dirichlet_partition_indices(labels, num_clients, alpha=dirichlet_alpha, seed=seed)
+    if key == "dirichlet_with_replacement":
+        return dirichlet_partition_indices(
+            labels, num_clients, alpha=dirichlet_alpha, seed=seed, with_replacement=True
+        )
+    if key in {"iid", "iid_no_replacement"}:
+        return iid_partition_indices(labels, num_clients, seed=seed)
+
+    raise ValueError(
+        "Unsupported partition strategy '{}'. Choose from balanced, dirichlet_no_replacement, "
+        "dirichlet_with_replacement, iid.".format(strategy)
+    )
 
 
 def create_dataloaders(

@@ -17,7 +17,7 @@ from src.data.federated_partition import (
     PartitionResult,
     create_dataloaders,
     load_dataset_tensors,
-    partition_indices_by_class,
+    partition_train_indices,
     split_holdout_by_class,
     split_test_indices,
     summarize_distribution,
@@ -64,6 +64,8 @@ class ModuleAConfig:
     seed: int = 0
     save_dir: str = "outputs/module_a"
     num_workers: int = 2
+    partition_strategy: str = "balanced"
+    dirichlet_alpha: float = 0.5
 
 
 @dataclass
@@ -128,7 +130,18 @@ class FederatedTrainingModuleA:
         self.meta = meta
         self.diffusion_holdout_indices = holdout_indices
 
-        train_assignments = partition_indices_by_class(self.fl_train_labels, self.cfg.num_clients, seed=self.cfg.seed)
+        train_assignments = partition_train_indices(
+            self.fl_train_labels,
+            self.cfg.num_clients,
+            strategy=self.cfg.partition_strategy,
+            seed=self.cfg.seed,
+            dirichlet_alpha=self.cfg.dirichlet_alpha,
+        )
+        logger.info(
+            "Partitioned training data using strategy '%s' (alpha=%.3f if applicable)",
+            self.cfg.partition_strategy,
+            self.cfg.dirichlet_alpha,
+        )
         server_indices, client_test_assignments = split_test_indices(self.test_labels, self.cfg.num_clients, seed=self.cfg.seed)
 
         self.partition = PartitionResult(
